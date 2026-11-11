@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="536" viewBox="0 0 360 536" role="img" aria-labelledby="implementation-title implementation-desc">
+  <title id="implementation-title">変更した範囲を、同じ版の結果で確かめる</title>
+  <desc id="implementation-desc">合意した範囲を実装し、その版の検証結果を記録して確定する。人が次の行動を判断し、必要なら実装担当へ修正を返す。修正後も同じ確認と必要な回帰確認を行う。</desc>
+  <defs><marker id="implementation-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#implementation-arrow)}</style>
+  <text x="180" y="28" class="heading">小さな変更と確認を繰り返す</text>
+  <rect x="20" y="46" width="320" height="74" rx="10" class="box"/>
+  <text x="180" y="77" class="heading">今回変更する範囲</text>
+  <text x="180" y="105" class="label">AC・期待値・変えない範囲</text>
+  <path d="M180 121V160" class="arrow"/>
+  <rect x="20" y="169" width="320" height="74" rx="10" class="box"/>
+  <text x="180" y="200" class="heading">実装担当：変更する</text>
+  <text x="180" y="228" class="label">必要なコード・テストを作る</text>
+  <path d="M180 244V283" class="arrow"/>
+  <rect x="20" y="292" width="320" height="80" rx="10" class="box"/>
+  <text x="180" y="323" class="heading">検証：結果を確定する</text>
+  <text x="180" y="352" class="label">同じ版の結果・未実施・失敗理由</text>
+  <path d="M180 373V412" class="arrow"/>
+  <rect x="20" y="421" width="320" height="76" rx="10" class="box"/>
+  <text x="180" y="451" class="heading">人：次の行動を判断する</text>
+  <text x="180" y="480" class="label">不一致は実装担当へ戻す</text>
+  <path d="M340 459H351V206H341" class="arrow"/>
+  <text x="180" y="523" class="label">修正後も同じ確認＋必要な回帰</text>
+</svg>

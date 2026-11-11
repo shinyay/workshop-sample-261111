@@ -1,0 +1,93 @@
+{
+  "preparation_only": {
+    "fixture": "c8-count",
+    "application_tests": {
+      "collected": 98,
+      "passed": 95,
+      "failures": 3
+    },
+    "fixed_oracle": {
+      "requests": 132,
+      "failures": 32
+    },
+    "purpose": "Prove that the deliberately broken baseline is detected; NOT a final A or B result; excluded from trial metrics"
+  },
+  "completed_trials": [
+    {
+      "condition": "A",
+      "phase": "after the independent A/B repair",
+      "trial": "count-a",
+      "local_base_commit": "e53cc1a7ac2837930d2b4f797b7cd520461b92c5",
+      "after_worktree_fingerprint": "5adccb8cb513cbf530af1a0313dbc4db5f91348a6ba84f04071bf395ec8b8017",
+      "uncommitted_change": [
+        "request_portal\\__init__.py"
+      ],
+      "reference_line_in_prompt": false,
+      "application_tests": {
+        "collected": 98,
+        "passed": 98,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "fixed_oracle": {
+        "requests": 132,
+        "failures": 0
+      },
+      "four_cli_checks": "all passed on this same repaired source",
+      "tool_counts": {
+        "view": 7,
+        "rg": 1,
+        "powershell": 8,
+        "apply_patch": 1
+      },
+      "tool_total": 17,
+      "input_total_tokens": 135239,
+      "output_tokens": 1913,
+      "cache_read_tokens": 107591,
+      "cache_write_tokens": 27630,
+      "non_cache_input_tokens": 18,
+      "native_elapsed_seconds": 55.57,
+      "tool_or_check_failures": 0,
+      "mid_trial_hints_or_coaching": 0
+    },
+    {
+      "condition": "B",
+      "phase": "after the independent A/B repair",
+      "trial": "count-b",
+      "local_base_commit": "58d0b7fab81c7cf2eda87c9581fe82d7c30d09b1",
+      "after_worktree_fingerprint": "5adccb8cb513cbf530af1a0313dbc4db5f91348a6ba84f04071bf395ec8b8017",
+      "uncommitted_change": [
+        "request_portal\\__init__.py"
+      ],
+      "reference_line_in_prompt": true,
+      "application_tests": {
+        "collected": 98,
+        "passed": 98,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "fixed_oracle": {
+        "requests": 132,
+        "failures": 0
+      },
+      "four_cli_checks": "all passed on this same repaired source",
+      "tool_counts": {
+        "view": 6,
+        "powershell": 7,
+        "rg": 1,
+        "apply_patch": 1
+      },
+      "tool_total": 15,
+      "input_total_tokens": 97264,
+      "output_tokens": 1972,
+      "cache_read_tokens": 80508,
+      "cache_write_tokens": 16738,
+      "non_cache_input_tokens": 18,
+      "native_elapsed_seconds": 47.577,
+      "tool_or_check_failures": 0,
+      "mid_trial_hints_or_coaching": 0
+    }
+  ]
+}

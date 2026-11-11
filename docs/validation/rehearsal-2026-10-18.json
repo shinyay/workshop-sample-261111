@@ -1,0 +1,762 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-18",
+  "date_timezone": "Asia/Tokyo",
+  "status": "local_rehearsal_complete",
+  "scope": {
+    "source_repository": "shinyay/python-portal-sample-app",
+    "fixed_source_revision": "1a411cd13c02f28bb6f3ac30844af204f1f61d48",
+    "source_main_at_start": "6030e32109cc6b09c84bb548cf561a365b28053a",
+    "source_main_at_end": "6030e32109cc6b09c84bb548cf561a365b28053a",
+    "source_branch_refs_unchanged": true,
+    "source_branch_refs_compared": 1,
+    "workspace_type": "isolated local Git repositories without a source remote",
+    "scenario_copy_repository_count": 14,
+    "all_scenario_copy_remotes_empty": true,
+    "remote_repository_created": false,
+    "source_repository_writes": false,
+    "app_implementation_revision_local_only": "b7f3a754d51c4c0a8329288b950581b4b1a30f83",
+    "acceptance_test_sha256": "4b7c184b7905406d87f0b9ec695d7146b0898a9d21acd5a362c331a96065cf2d",
+    "main_readme_corrected_after_implementation_commit": true,
+    "raw_logs_code_diffs_screenshots_and_working_copies_retained": false,
+    "aggregate_is_not_a_distributable_or_reconstructable_exercise_repository": true
+  },
+  "environment": {
+    "os": "Windows",
+    "node": "22.16.0",
+    "python": [
+      "3.14.7",
+      "3.13.15"
+    ],
+    "uv": "0.12.10",
+    "flask": "3.1.3",
+    "pytest": "9.1.1",
+    "ruff": "0.16.9",
+    "mypy": "1.20.2",
+    "application_browser": "Edge 155.0.4283.60",
+    "application_playwright": "1.63.0",
+    "copilot_cli": "1.0.98",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "medium",
+    "experimental_cli_flag": false,
+    "terraform": "1.16.6",
+    "azurerm": "5.10.0",
+    "moaw_cli": "1.6.1",
+    "moaw_viewer": "sha.9deeac0",
+    "teaching_viewer_playwright": "1.56.1"
+  },
+  "test_runs": {
+    "starter_environment_failure": {
+      "collected": 86,
+      "passed": 75,
+      "failure": 9,
+      "error": 2,
+      "skipped": 0
+    },
+    "starter_after_short_temp": {
+      "collected": 86,
+      "passed": 86,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "instructions_a": {
+      "collected": 86,
+      "passed": 86,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "instructions_b": {
+      "collected": 84,
+      "passed": 84,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "instructions_c": {
+      "collected": 86,
+      "passed": 86,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "shared_small_diff": {
+      "collected": 84,
+      "passed": 84,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "department_before_implementation": {
+      "collected": 1,
+      "passed": 0,
+      "failure": 1,
+      "error": 0,
+      "skipped": 0
+    },
+    "copied_lesson_test_before_implementation": {
+      "collected": 1,
+      "passed": 0,
+      "failure": 1,
+      "error": 0,
+      "skipped": 0
+    },
+    "before_ui_implementation": {
+      "collected": 151,
+      "passed": 145,
+      "failure": 6,
+      "error": 0,
+      "skipped": 0
+    },
+    "participant_python_3_14_7": {
+      "collected": 152,
+      "passed": 152,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "participant_python_3_13_15": {
+      "collected": 152,
+      "passed": 152,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "instructor_patch_checks_on_participant_wrong_target": {
+      "collected": 2,
+      "passed": 0,
+      "failure": 0,
+      "error": 2,
+      "skipped": 0
+    },
+    "and_or_defect": {
+      "collected": 67,
+      "passed": 54,
+      "failure": 13,
+      "error": 0,
+      "skipped": 0
+    },
+    "and_or_restored": {
+      "collected": 152,
+      "passed": 152,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "count_defect": {
+      "collected": 67,
+      "passed": 42,
+      "failure": 25,
+      "error": 0,
+      "skipped": 0
+    },
+    "count_a_independent": {
+      "collected": 152,
+      "passed": 152,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "count_b_independent": {
+      "collected": 152,
+      "passed": 152,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "main_after_review": {
+      "collected": 152,
+      "passed": 152,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "delivery_generated_helpers": {
+      "collected": 28,
+      "passed": 10,
+      "failure": 18,
+      "error": 0,
+      "skipped": 0
+    },
+    "delivery_first_correction": {
+      "collected": 28,
+      "passed": 28,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "delivery_extended_inputs_before_correction": {
+      "collected": 4,
+      "passed": 1,
+      "failure": 3,
+      "error": 0,
+      "skipped": 0
+    },
+    "delivery_final_helpers": {
+      "collected": 31,
+      "passed": 31,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "delivery_real_application": {
+      "collected": 152,
+      "passed": 152,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "application_static_checks": {
+    "ruff": "passed",
+    "format": "passed",
+    "mypy": "passed"
+  },
+  "query_equivalence": {
+    "comparison": "HTTP status and nonce-normalized response body SHA-256",
+    "same_48_case_oracle": true,
+    "conditions": [
+      {
+        "copy": "a",
+        "matching_http_cases": 48
+      },
+      {
+        "copy": "b",
+        "matching_http_cases": 48
+      },
+      {
+        "copy": "c",
+        "matching_http_cases": 48
+      }
+    ],
+    "different_test_counts_do_not_rank_quality": true
+  },
+  "customization": {
+    "r0_r1_v0_v1_sources_unchanged": true,
+    "shared_diff_revision_local_only": "303f4d82e6d1de87e2baa07f004797af434b287d",
+    "v0_target_skill_invocations": [],
+    "v1_target_skill_invocations": [
+      "verify-portal"
+    ],
+    "conditional_instruction_discovery_and_explicit_read": true,
+    "automatic_applyTo_proven": false,
+    "vscode_applyTo_proven": false
+  },
+  "browser_runs": {
+    "starter": {
+      "stage": "starter",
+      "browser": "155.0.4283.60",
+      "checks": [
+        "desktop list and all 12 rows",
+        "keyboard skip link reaches main content",
+        "starter has no filtering and rejects unsupported queries",
+        "detail displays the seeded request and available decisions",
+        "native input validation, server errors, preserved values, creation, both decisions",
+        "light/dark rendering, 375px layouts, keyboard table scrolling, error page"
+      ],
+      "check_groups": 6,
+      "screenshots_observed": 7,
+      "uncaught_script_errors": 0
+    },
+    "participant": {
+      "stage": "participant",
+      "browser": "155.0.4283.60",
+      "checks": [
+        "desktop list and all 12 rows",
+        "keyboard skip link reaches main content",
+        "AND filtering, API agreement, no matches, and clearing",
+        "selected values and explicit theme survive submit and clearing",
+        "detail displays the seeded request and available decisions",
+        "native input validation, server errors, preserved values, creation, both decisions",
+        "light/dark rendering, 375px layouts, keyboard table scrolling, error page"
+      ],
+      "check_groups": 7,
+      "screenshots_observed": 9,
+      "uncaught_script_errors": 0
+    },
+    "count_a": {
+      "stage": "participant",
+      "browser": "155.0.4283.60",
+      "checks": [
+        "desktop list and all 12 rows",
+        "keyboard skip link reaches main content",
+        "AND filtering, API agreement, no matches, and clearing",
+        "selected values and explicit theme survive submit and clearing",
+        "detail displays the seeded request and available decisions",
+        "native input validation, server errors, preserved values, creation, both decisions",
+        "light/dark rendering, 375px layouts, keyboard table scrolling, error page"
+      ],
+      "check_groups": 7,
+      "screenshots_observed": 9,
+      "uncaught_script_errors": 0
+    },
+    "count_b": {
+      "stage": "participant",
+      "browser": "155.0.4283.60",
+      "checks": [
+        "desktop list and all 12 rows",
+        "keyboard skip link reaches main content",
+        "AND filtering, API agreement, no matches, and clearing",
+        "selected values and explicit theme survive submit and clearing",
+        "detail displays the seeded request and available decisions",
+        "native input validation, server errors, preserved values, creation, both decisions",
+        "light/dark rendering, 375px layouts, keyboard table scrolling, error page"
+      ],
+      "check_groups": 7,
+      "screenshots_observed": 9,
+      "uncaught_script_errors": 0
+    }
+  },
+  "count_comparison": {
+    "pairs": 1,
+    "execution_order": [
+      "count-a",
+      "count-b"
+    ],
+    "same_initial_source_hashes": true,
+    "same_effective_tools": true,
+    "prompt_difference": "one reference line appended only for B",
+    "separate_sessions_copies_and_databases": true,
+    "changed_files": {
+      "count-a": [
+        "request_portal\\__init__.py"
+      ],
+      "count-b": [
+        "request_portal\\__init__.py"
+      ]
+    },
+    "winning_condition_or_general_savings_claimed": false,
+    "metric_scope": "CLI trial only; excludes preparation, independent validation, analysis and cleanup"
+  },
+  "cli_trials": [
+    {
+      "trial": "a",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 81.465,
+      "input_tokens_including_cache": 140482,
+      "output_tokens": 3896,
+      "cache_read_tokens": 115884,
+      "cache_write_tokens": 24574,
+      "intermediate_tool_failures": 4,
+      "source_unchanged": null
+    },
+    {
+      "trial": "b",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 57.446,
+      "input_tokens_including_cache": 121663,
+      "output_tokens": 3462,
+      "cache_read_tokens": 102155,
+      "cache_write_tokens": 19487,
+      "intermediate_tool_failures": 3,
+      "source_unchanged": null
+    },
+    {
+      "trial": "c",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 95.974,
+      "input_tokens_including_cache": 194366,
+      "output_tokens": 5230,
+      "cache_read_tokens": 165848,
+      "cache_write_tokens": 28491,
+      "intermediate_tool_failures": 4,
+      "source_unchanged": false
+    },
+    {
+      "trial": "count-a",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 63.396,
+      "input_tokens_including_cache": 139840,
+      "output_tokens": 2764,
+      "cache_read_tokens": 118957,
+      "cache_write_tokens": 20859,
+      "intermediate_tool_failures": 4,
+      "source_unchanged": false
+    },
+    {
+      "trial": "count-b",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 98.248,
+      "input_tokens_including_cache": 138309,
+      "output_tokens": 3975,
+      "cache_read_tokens": 123943,
+      "cache_write_tokens": 14336,
+      "intermediate_tool_failures": 2,
+      "source_unchanged": false
+    },
+    {
+      "trial": "delivery-initial-retry",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 170.136,
+      "input_tokens_including_cache": 362932,
+      "output_tokens": 11902,
+      "cache_read_tokens": 336202,
+      "cache_write_tokens": 26679,
+      "intermediate_tool_failures": 7,
+      "source_unchanged": false
+    },
+    {
+      "trial": "delivery-revision",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 118.986,
+      "input_tokens_including_cache": 294923,
+      "output_tokens": 11628,
+      "cache_read_tokens": 270941,
+      "cache_write_tokens": 23937,
+      "intermediate_tool_failures": 1,
+      "source_unchanged": false
+    },
+    {
+      "trial": "implementation-conditions",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 96.058,
+      "input_tokens_including_cache": 194862,
+      "output_tokens": 4736,
+      "cache_read_tokens": 171437,
+      "cache_write_tokens": 23395,
+      "intermediate_tool_failures": 8,
+      "source_unchanged": false
+    },
+    {
+      "trial": "implementation-department",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 84.297,
+      "input_tokens_including_cache": 342029,
+      "output_tokens": 5518,
+      "cache_read_tokens": 307463,
+      "cache_write_tokens": 34524,
+      "intermediate_tool_failures": 6,
+      "source_unchanged": false
+    },
+    {
+      "trial": "implementation-ui",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 84.035,
+      "input_tokens_including_cache": 147403,
+      "output_tokens": 3482,
+      "cache_read_tokens": 125324,
+      "cache_write_tokens": 22055,
+      "intermediate_tool_failures": 3,
+      "source_unchanged": false
+    },
+    {
+      "trial": "main-review",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 50.678,
+      "input_tokens_including_cache": 111951,
+      "output_tokens": 3797,
+      "cache_read_tokens": 72199,
+      "cache_write_tokens": 39737,
+      "intermediate_tool_failures": 6,
+      "source_unchanged": true
+    },
+    {
+      "trial": "quality-rereview",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 31.216,
+      "input_tokens_including_cache": 53347,
+      "output_tokens": 3150,
+      "cache_read_tokens": 36092,
+      "cache_write_tokens": 17240,
+      "intermediate_tool_failures": 8,
+      "source_unchanged": true
+    },
+    {
+      "trial": "quality-review",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 28.67,
+      "input_tokens_including_cache": 56322,
+      "output_tokens": 2991,
+      "cache_read_tokens": 33865,
+      "cache_write_tokens": 22445,
+      "intermediate_tool_failures": 0,
+      "source_unchanged": true
+    },
+    {
+      "trial": "r0",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 36.741,
+      "input_tokens_including_cache": 79283,
+      "output_tokens": 4036,
+      "cache_read_tokens": 52119,
+      "cache_write_tokens": 27149,
+      "intermediate_tool_failures": 1,
+      "source_unchanged": true
+    },
+    {
+      "trial": "r1",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 33.847,
+      "input_tokens_including_cache": 96451,
+      "output_tokens": 3443,
+      "cache_read_tokens": 72325,
+      "cache_write_tokens": 24108,
+      "intermediate_tool_failures": 1,
+      "source_unchanged": true
+    },
+    {
+      "trial": "v0",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 59.264,
+      "input_tokens_including_cache": 121406,
+      "output_tokens": 3029,
+      "cache_read_tokens": 97285,
+      "cache_write_tokens": 24103,
+      "intermediate_tool_failures": 5,
+      "source_unchanged": true
+    },
+    {
+      "trial": "v1",
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium",
+      "exit": 0,
+      "elapsed_seconds": 87.275,
+      "input_tokens_including_cache": 101507,
+      "output_tokens": 3592,
+      "cache_read_tokens": 82573,
+      "cache_write_tokens": 18913,
+      "intermediate_tool_failures": 5,
+      "source_unchanged": true
+    }
+  ],
+  "metric_interpretation": {
+    "input_tokens": "modelMetrics.inputTokens already includes cache read and cache write; do not add them again",
+    "output_tokens": "modelMetrics.outputTokens; reasoning is not added again",
+    "elapsed_seconds": "wall clock around the CLI trial, not participant workshop time",
+    "source_unchanged_null": "the early wrapper did not emit this field; null is not proof of no changes",
+    "failed_tools": "intermediate failures are retained even when the CLI exits successfully",
+    "billing_or_generalized_efficiency": "not evaluated"
+  },
+  "observed_issues_and_resolutions": [
+    "TLS retrieval failures were resolved through another certificate-validating path with locked artifact hashes; certificate verification was not disabled.",
+    "Long Windows paths caused test setup/CLI failures; a short dedicated TEMP/TMP separated these from application defects.",
+    "The instructor patch apply/reverse checks target starter, not participant; only those two checks are excluded from participant regression.",
+    "Stage classification retained starter/reference/participant branches, rather than replacing the classifier with a constant.",
+    "A real GET submission lost scoutTheme from the action URL; a hidden field restored theme retention and the same browser check passed.",
+    "AND-to-OR and count mutations were checked for intended post-image shape before negative assertions were accepted.",
+    "A review concern about a test file's existence was rejected only after rerunning the actual command and its explicit exclusion.",
+    "A CLI answer mislabeled a generic interactive-permission denial as an organizational exclusion. The tool result and malformed path did not establish content exclusion; real exclusions must not be bypassed.",
+    "The main README still described starter after implementation; the isolated README was corrected without writing to the source repository."
+  ],
+  "delivery": {
+    "initial_observed_defects": {
+      "green_152_junit_rejected": "pytest quality gate rejected JUnit results: tests=0, failures=0, errors=0, skipped=0",
+      "forbidden_zip_members": [
+        "request_portal/.env",
+        "request_portal/__pycache__/fixture.pyc",
+        "request_portal/demo.sqlite3"
+      ],
+      "wrong_version_shell_probe": {
+        "generated": {
+          "exit": 0,
+          "quality_reached": true
+        },
+        "fail_fast_control": {
+          "exit": 1,
+          "quality_reached": false
+        }
+      },
+      "probe_scope": "Real generated functions/script; dummy package and local shell functions, not a CI service run."
+    },
+    "correction_actor": "validation coordinator agent, distinct from the CLI generation trials",
+    "uncorrected_generation_alone_sufficient": false,
+    "failure_interpretation": "18 failing fixtures included cascades from early dirty-input/default-path problems, not 18 independently established defects.",
+    "extended_input_regression": "After the first correction, three newly added fixtures exposed untracked test/tool/root Python inputs; the final 31-case suite passed after correction.",
+    "terraform_fmt_and_validate": "passed with installed locked provider",
+    "terraform_plan_apply_state_or_cloud_connection": false,
+    "activation_preconditions_evaluated_by_plan": false,
+    "yaml_and_bash": {
+      "yaml_parse_and_contract_checks": "passed",
+      "service_expression_evaluation": "not_run",
+      "download_tasks": "definition/schema only; no artifact downloaded from a service",
+      "cloud_or_pipeline_service_execution": false,
+      "shell_cases": [
+        {
+          "name": "ci-positive",
+          "exit": 0,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "wrong-python",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "wrong-uv",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "lookalike-python-version",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "quality-failure",
+          "exit": 3,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "cd-disabled",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "cd-missing-approval",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "cd-missing-selection",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "cd-bad-digest",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "cd-complete-fixture-selection",
+          "exit": 0,
+          "scope": "actual Bash body with local fixture commands"
+        },
+        {
+          "name": "cd-terminal-still-stops",
+          "exit": 1,
+          "scope": "actual Bash body with local fixture commands"
+        }
+      ]
+    },
+    "real_local_helper": {
+      "source_revision_local_only": "b48d8854b645837ee6c1c5417f6ccf40683fafba",
+      "checks": [
+        "pytest",
+        "ruff",
+        "format",
+        "mypy"
+      ],
+      "pytest": {
+        "tests": 152,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "junit_sha256": "96bb5171fce7bf9a2a7616e5461a6619cdfaf365f7192c6dfa9ec6faa77f1fd9"
+      },
+      "source_inputs_hashed": 41,
+      "archive_members": 14,
+      "archive_sha256": "5480b870f4d852a334093057e7a388e103f683afdb144edd7a8c2d28c5be5da7",
+      "run_id": "1",
+      "run_id_is_local_fixture_not_azure_run": true,
+      "same_archive_selection_checks": [
+        {
+          "environment": "dev",
+          "exit": 0,
+          "rebuilt": false
+        },
+        {
+          "environment": "test",
+          "exit": 0,
+          "rebuilt": false
+        }
+      ],
+      "helper_sha256": "9b176aa4fa94d40fdc11e87d76af55171b2a03a7b8d4ae9228263f80fe9558f2",
+      "helper_fixture_sha256": "08472b68c4a47d5167bc8d8d5750b613d63443efdc6b267a2cf98cc6c673972e",
+      "offline_existing_dependency_environment": true
+    },
+    "deployment_ready": false,
+    "remaining": [
+      "App Service runtime/startup/Host/persistence fit",
+      "environment-specific actual values, backend configuration and real state separation",
+      "service connections, permissions and service-side approvals",
+      "Azure Pipelines execution and actual artifact transfer",
+      "browser quality in CI, deployment and post-deployment behavior"
+    ]
+  },
+  "excluded_instrument_failures": [
+    {
+      "kind": "delivery initial snapshot",
+      "cause": "Windows path length inside .terraform",
+      "ai_trial_started": false
+    },
+    {
+      "kind": "first helper pytest invocation",
+      "cause": "PowerShell junitxml argument syntax",
+      "exit": 4,
+      "tests_collected": false
+    },
+    {
+      "kind": "first WSL shell fixture",
+      "cause": "text-mode CRLF input",
+      "resolution": "send LF-preserving input before judging the generated script"
+    }
+  ],
+  "not_verified": [
+    "VS Code/Codespaces participant end-to-end workflow",
+    "chosen model and all required features through a non-Preview VS Code path",
+    "automatic conditional instruction application in VS Code",
+    "human final approval, live supervision/stop/resume and third-party learner assessment",
+    "participant workshop duration, support load, publication and distribution readiness",
+    "Azure/Azure DevOps execution or cloud deployment"
+  ],
+  "teaching_material_checks": {
+    "status": "passed",
+    "git_diff_check": "passed",
+    "manuscript_pages": 47,
+    "numbered_sections": 39,
+    "svg_diagrams": 10,
+    "local_document_links": 222,
+    "unit_and_server_tests": 15,
+    "browser_tests": 5,
+    "browser_scope": "all pages, copyable code, collapsed hints, navigation, narrow layouts and SVG geometry",
+    "published": false,
+    "duration_minutes": null,
+    "publication_readiness": "not claimed; workshop duration and participant readiness remain open"
+  },
+  "cleanup": {
+    "status": "completed",
+    "scenario_copy_repositories_removed": 14,
+    "owned_rehearsal_root_removed": true,
+    "dedicated_temp_removed": true,
+    "trial_processes_remaining": 0,
+    "trial_port_listeners_remaining": 0,
+    "temporary_vscode_window_closed": true,
+    "raw_trial_logs_profiles_databases_and_browser_images_removed": true,
+    "teaching_worktree_preserved": true,
+    "shared_copilot_cache_preserved": true,
+    "existing_workshop_preview": "refreshed and retained separately from trial resources"
+  }
+}

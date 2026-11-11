@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="528" viewBox="0 0 360 528" role="img" aria-labelledby="instructions-title instructions-desc">
+  <title id="instructions-title">情報の用途で指示を分ける</title>
+  <desc id="instructions-desc">共通指示には繰り返し使う規則、条件付き指示には特定の作業の規則、今回の依頼には今回の変更目的を置く。指示が見つかり、今回の作業で使われ、行動でも守られたかを分けて確かめる。</desc>
+  <defs><marker id="instructions-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#instructions-arrow)}</style>
+  <text x="180" y="28" class="heading">優先順位ではなく、使う場面</text>
+  <rect x="20" y="46" width="310" height="88" rx="10" class="box"/>
+  <text x="175" y="78" class="heading">共通指示</text>
+  <text x="175" y="109" class="label">確認済みの構成と共通の規則</text>
+  <rect x="20" y="166" width="310" height="88" rx="10" class="box"/>
+  <text x="175" y="198" class="heading">条件付き指示</text>
+  <text x="175" y="229" class="label">特定の作業だけで使う規則</text>
+  <rect x="20" y="286" width="310" height="88" rx="10" class="box"/>
+  <text x="175" y="318" class="heading">今回の依頼</text>
+  <text x="175" y="349" class="label">目的・AC・参照・変えない範囲</text>
+  <path d="M331 90H347V422H180V435" class="arrow"/>
+  <path d="M331 210H347M331 330H347" fill="none" stroke="#0078d4" stroke-width="2"/>
+  <rect x="20" y="444" width="320" height="66" rx="10" class="box"/>
+  <text x="180" y="471" class="heading">今回の作業で確かめる</text>
+  <text x="180" y="496" class="label">見つかる・使われる・守られる</text>
+</svg>

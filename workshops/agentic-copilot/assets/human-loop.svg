@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="548" viewBox="0 0 360 548" role="img" aria-labelledby="human-title human-desc">
+  <title id="human-title">人の判断を待つ場面と、状況を見ながら任せる範囲</title>
+  <desc id="human-desc">HITLではAIが人の判断を待って次へ進む。HOTLでは合意した作業を人が見守り、条件を守っていれば続け、外れたら人が対応する。指摘の採用、修正範囲、最終的な品質は人が判断する。</desc>
+  <defs><marker id="human-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#human-arrow)}</style>
+  <text x="180" y="28" class="heading">作業ごとに組み合わせる</text>
+  <rect x="20" y="46" width="320" height="156" rx="10" class="box"/>
+  <text x="180" y="77" class="heading">HITL：人の判断を待つ</text>
+  <text x="180" y="111" class="label">根拠を人へ渡す</text>
+  <path d="M180 120V139" class="arrow"/>
+  <text x="180" y="165" class="label">人が採用・範囲を判断 → 次へ</text>
+  <text x="180" y="188" class="label">判断前には進まない</text>
+  <rect x="20" y="238" width="320" height="196" rx="10" class="box"/>
+  <text x="180" y="270" class="heading">HOTL：状況を見ながら任せる</text>
+  <text x="180" y="306" class="label">合意した範囲の作業を進める</text>
+  <path d="M180 315V337" class="arrow"/>
+  <text x="180" y="364" class="label">人が続けてよい状態かを確認</text>
+  <text x="180" y="396" class="label">条件内は継続、外れたら対応</text>
+  <path d="M325 364H332V300H318" class="arrow"/>
+  <rect x="20" y="471" width="320" height="60" rx="10" fill="#f4f4f6" stroke="#737382"/>
+  <text x="180" y="495" class="label">採用・修正範囲・最終品質の判断</text>
+  <text x="180" y="518" class="label">必要な人の判断を省かない</text>
+</svg>

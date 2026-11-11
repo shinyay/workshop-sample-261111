@@ -1,0 +1,131 @@
+{
+  "scope": "Execute the four chapter 6-4 commands extracted from the current material, plus untracked-content hashing.",
+  "assertions": [
+    "staged and unstaged edits included",
+    "binary content included",
+    "space-containing paths accepted",
+    "untracked edits leave HEAD/status/patch unchanged",
+    "per-file hash detects untracked content changes",
+    "before and after patch files both retained"
+  ],
+  "results": [
+    {
+      "phase": "before",
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "be8df6b5cc2ee1e09ae4229eb4391bbafb596f32\n",
+      "stderr": ""
+    },
+    {
+      "phase": "before",
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M binary.dat\nM  staged.txt\n M tracked.txt\n?? \"new tests/probe.txt\"\n",
+      "stderr": ""
+    },
+    {
+      "phase": "before",
+      "command": [
+        "git",
+        "diff",
+        "--binary",
+        "--output=<workspace>/.cache/review-followup-20261027/record folder/before.patch",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "phase": "before",
+      "command": [
+        "git",
+        "hash-object",
+        "<workspace>/.cache/review-followup-20261027/record folder/before.patch"
+      ],
+      "exit_code": 0,
+      "stdout": "fe41e1a26c5b0c032bfb79536c39f3edaed3f584\n",
+      "stderr": ""
+    },
+    {
+      "phase": "before",
+      "kind": "untracked-content",
+      "command": [
+        "git",
+        "hash-object",
+        "<workspace>\\.cache\\review-followup-20261027\\git-recording\\new tests\\probe.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "9bc69cf340b5d476e7e3758dbdd4918e654dc8be\n",
+      "stderr": ""
+    },
+    {
+      "phase": "after",
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "be8df6b5cc2ee1e09ae4229eb4391bbafb596f32\n",
+      "stderr": ""
+    },
+    {
+      "phase": "after",
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": " M binary.dat\nM  staged.txt\n M tracked.txt\n?? \"new tests/probe.txt\"\n",
+      "stderr": ""
+    },
+    {
+      "phase": "after",
+      "command": [
+        "git",
+        "diff",
+        "--binary",
+        "--output=<workspace>/.cache/review-followup-20261027/record folder/after.patch",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "phase": "after",
+      "command": [
+        "git",
+        "hash-object",
+        "<workspace>/.cache/review-followup-20261027/record folder/after.patch"
+      ],
+      "exit_code": 0,
+      "stdout": "fe41e1a26c5b0c032bfb79536c39f3edaed3f584\n",
+      "stderr": ""
+    },
+    {
+      "phase": "after",
+      "kind": "untracked-content",
+      "command": [
+        "git",
+        "hash-object",
+        "<workspace>\\.cache\\review-followup-20261027\\git-recording\\new tests\\probe.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "6702fe2da3140f13942b3ce09819f786acf558c1\n",
+      "stderr": ""
+    }
+  ]
+}

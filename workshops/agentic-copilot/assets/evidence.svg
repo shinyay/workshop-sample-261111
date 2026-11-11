@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="552" viewBox="0 0 360 552" role="img" aria-labelledby="evidence-title evidence-desc">
+  <title id="evidence-title">説明の裏付けを確かめる調査の流れ</title>
+  <desc id="evidence-desc">知りたいことに合わせてファイルや資料を探し、説明を裏付ける根拠があるかを確かめる。足りなければ追加で調べ、人の判断と未決事項を計画へ渡す。</desc>
+  <defs><marker id="evidence-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#evidence-arrow)}</style>
+  <text x="180" y="28" class="heading">調べた根拠から判断する</text>
+  <rect x="20" y="46" width="320" height="76" rx="10" class="box"/>
+  <text x="180" y="76" class="heading">知りたいことを決める</text>
+  <text x="180" y="104" class="label">今、何を知る必要があるか</text>
+  <path d="M180 123V166" class="arrow"/>
+  <rect x="20" y="174" width="320" height="80" rx="10" class="box"/>
+  <text x="180" y="205" class="heading">ファイルや資料を読む</text>
+  <text x="180" y="234" class="label">版・ファイル・処理を確かめる</text>
+  <path d="M180 255V294" class="arrow"/>
+  <rect x="20" y="302" width="320" height="80" rx="10" class="box"/>
+  <text x="180" y="333" class="heading">説明を根拠と比べる</text>
+  <text x="180" y="362" class="label">足りなければ追加で調べる</text>
+  <path d="M340 342H351V214H341" class="arrow"/>
+  <path d="M180 383V428" class="arrow"/>
+  <rect x="20" y="436" width="320" height="80" rx="10" class="box"/>
+  <text x="180" y="467" class="heading">人が判断し、計画へ渡す</text>
+  <text x="180" y="496" class="label">事実・推測・未決を分ける</text>
+  <text x="180" y="540" class="label">読めたことと実行の成功は別</text>
+</svg>

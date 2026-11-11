@@ -1,0 +1,671 @@
+{
+  "schema_version": 1,
+  "review_id": "material-review-2026-10-27",
+  "decision": "D-048",
+  "baseline_commit": "c7a11db8461c00aee5221ba8cd5c343f5035107a",
+  "inherited_revision": "69bdfc8c396939c43081d8adce713214b7bf56be",
+  "scope": "参加者向けの導入6ページ、本編39節、補足2ページの全47ページとSVG図10点。本文・表・依頼例・コード例・記入欄・折りたたみ・図の文言を読み、章間の引き継ぎ、AC・DR、設計の正本と照合した。",
+  "method": "承認済みの修正を引き継ぎ、参加者向け全文と実差分を再読。根拠が不足した断定や手順の抜けを補正し、固定アプリのテストとGit記録例を限定的に実行した。教材のビルド・表示検査と演習そのものの試走を区別する。",
+  "protected_conditions": [
+    "AC-01〜AC-11、DR-01〜DR-13、学習目標と章・節の構成を変えない",
+    "本編と独立演習のコード・データ・会話・結果を混ぜない",
+    "第1・2章の読取・検索、レビューAgentの非編集・非実行、検証中の非修正を維持する",
+    "クラウド接続、Terraform plan/apply/state操作、パイプライン登録・実行をしない",
+    "Preview/Experimentalの利用や、許可を広げる迂回で不足を埋めない",
+    "既存の試走記録を上書きせず、今回の改訂を過去の実行済み手順とは扱わない"
+  ],
+  "findings": [
+    {
+      "id": "R01",
+      "aspect": "正確さ",
+      "pages": [
+        "scenario",
+        "sec02-requirements"
+      ],
+      "problem": "教材本文をCopilotが読めないと断言していた。折りたたみとアクセス制御も区別が必要。",
+      "resolution": "画面に表示しただけでは本文が渡るとは限らないと説明し、ACの条件・期待値を明示する。ヒントへのアクセス・引用も比較条件に含める。",
+      "evidence": [
+        "docs/design/common-scenario.md:2.3"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R02",
+      "aspect": "正確さ",
+      "pages": [
+        "prerequisites"
+      ],
+      "problem": "初めてフォルダーを開くと必ず信頼の確認画面が出るという記述が、親フォルダーの信頼を継承する場合と矛盾していた。",
+      "resolution": "画面や制限モードの案内が出る場合を説明し、ダイアログの有無ではなく対象フォルダーと信頼状態を確認する。",
+      "evidence": [
+        "https://code.visualstudio.com/docs/editing/workspaces/workspace-trust#_selecting-a-parent-folder"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R03",
+      "aspect": "正確さ・分かりやすさ",
+      "pages": [
+        "sec02-plan"
+      ],
+      "problem": "未決事項を計画に残す手順と、未決の仕様を計画に混ぜない依頼例が食い違っていた。",
+      "resolution": "未決事項は決定済みの実装範囲と分け、人の判断待ちとして残す表現へ統一。",
+      "status": "fixed"
+    },
+    {
+      "id": "R04",
+      "aspect": "正確さ",
+      "pages": [
+        "sec03-baseline",
+        "sec05-increment"
+      ],
+      "problem": "完成例パッチの検品テストはコード変更後に必ず失敗する、という説明は成立しない。前段の改訂も特定の実測結果を一般化していた。",
+      "resolution": "成功・パッチ適用失敗・準備エラーのいずれも起こり得ると訂正。参加者の実装の合否を決めるテストではないため除外する、という理由を中心に説明。",
+      "evidence": [
+        "material-review-2026-10-27/reference-tests.json"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R05",
+      "aspect": "分かりやすさ",
+      "pages": [
+        "sec02-map",
+        "sec06-verify",
+        "reference"
+      ],
+      "problem": "AGENTS.mdとHEADの説明が初出で不足し、AGENTS.mdの補足はヒント内だけに置かれていた。",
+      "resolution": "AGENTS.mdは2-1の本文で説明し、HEADは6-4の操作例と用語集に加えた。",
+      "evidence": [
+        "authoring/README.md:5"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R06",
+      "aspect": "分かりやすさ・操作の整合性",
+      "pages": [
+        "sec01-handoff",
+        "sec03-baseline"
+      ],
+      "problem": "読取・検索の設定例は追加されたが、最初の編集時にAskから編集可能な担当へ切り替える手順がなかった。",
+      "resolution": "VS Code 1.144・Localの例を版付きで補い、第3章の手順本文に切替・実効ツール確認・比較条件の統一を明記。",
+      "evidence": [
+        "docs/design/workshop-preparation.md:10.2",
+        "docs/design/workshop-preparation.md:10.4"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R07",
+      "aspect": "分かりやすさ",
+      "pages": [
+        "sec04-agent"
+      ],
+      "problem": "レビューAgentの役割本文だけでは、初学者が必要なfront matterを組み立てにくい。",
+      "resolution": "試走で使ったfront matterを補足に掲載。定義の保存と実効ツールの制限確認は別だという条件を維持。",
+      "evidence": [
+        "docs/validation/vscode-dry-run-vsdr-12103b/adopted/portal-reviewer.agent.md",
+        "https://code.visualstudio.com/docs/agent-customization/custom-agents"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R08",
+      "aspect": "正確さ",
+      "pages": [
+        "sec04-skill"
+      ],
+      "problem": "PluginをVS Codeの拡張機能と同義のように説明していた。",
+      "resolution": "VS Codeの拡張機能とエージェント用プラグインを分けて記載。",
+      "evidence": [
+        "https://code.visualstudio.com/docs/agent-customization/agent-skills"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R09",
+      "aspect": "正確さ・分かりやすさ",
+      "pages": [
+        "sec01-context",
+        "sec08-trial"
+      ],
+      "problem": "利用量をいつ読み、複数依頼をどうまとめるかが不足し、途中値・月間値・累積値を混ぜる余地があった。",
+      "resolution": "応答終了後の値、試行に含む依頼一覧、依頼ごとの集計と累積値の二重計上防止を追記。未取得と時間範囲の区別は維持。",
+      "evidence": [
+        "docs/design/workshop-preparation.md:10.5"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R10",
+      "aspect": "正確さ・記録の再現性",
+      "pages": [
+        "sec06-verify"
+      ],
+      "problem": "追加された記録例は未追跡ファイルの名前だけを残していた。新規テストの中身が変わってもHEAD・status・差分ハッシュは変わらず、同じ版か判別できない。",
+      "resolution": "未追跡ファイルごとの内容ハッシュと前後の別ファイル保存を追加。ステージ済み・未追加・バイナリ変更、空白を含むパスも確認。",
+      "evidence": [
+        "material-review-2026-10-27/git-recording.json"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R11",
+      "aspect": "正確さ・必須条件の見つけやすさ",
+      "pages": [
+        "sec07-requirements",
+        "sec07-pipeline",
+        "sec07-change",
+        "sec07-review"
+      ],
+      "problem": "第7章のローカル実行が必須とも条件付きとも読め、7-4の必須照合項目がヒントだけにあった。",
+      "resolution": "全員が行う定義・レビューと、準備・許可がある場合の実行を章冒頭で区別。照合項目を7-4の本文へ出し、実行しない場合の未検証を明示。品質条件は削除しない。",
+      "evidence": [
+        "docs/design/sections/07-delivery-definitions.md:8",
+        "docs/design/common-scenario.md:2.3"
+      ],
+      "status": "fixed"
+    },
+    {
+      "id": "R12",
+      "aspect": "読みやすさ",
+      "pages": [
+        "sec03-baseline",
+        "sec03-decide",
+        "sec04-adopt",
+        "sec05-quality"
+      ],
+      "problem": "注意事項が長い段落に密集し、同じ自己確認が本文と折りたたみに重複していた。",
+      "resolution": "開始前の確認、コマンド、許可、比較の限界、DB操作などに分け、4-5の重複を統合。必要な注意は操作の近くに残す。",
+      "status": "fixed"
+    },
+    {
+      "id": "R13",
+      "aspect": "正確さ・用語",
+      "pages": [
+        "sec03-decide",
+        "reference"
+      ],
+      "problem": "新設したコンテンツの除外の説明が、どの機能・環境でも一律に適用される保証と読めた。",
+      "resolution": "利用対象から外すための管理設定と説明し、対応する機能・環境を公式資料と管理者の案内で確認する。除外された情報を別手段で読むことはしない。",
+      "evidence": [
+        "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/content-exclusion"
+      ],
+      "status": "fixed"
+    }
+  ],
+  "page_review": [
+    {
+      "id": "start",
+      "note": "対象読者、プロンプトの定義、読む学習と実操作の区別を確認。変更不要。",
+      "file": "workshops/agentic-copilot/chapters/00-start-here.md",
+      "line": 1
+    },
+    {
+      "id": "learning-goals",
+      "note": "5つの到達目標が章の成果と対応。利用量削減の保証をしていない。",
+      "file": "workshops/agentic-copilot/chapters/00-start-here.md",
+      "line": 44
+    },
+    {
+      "id": "scenario-overview",
+      "note": "変更依頼、開始版未実装、対象外がACと一致。",
+      "file": "workshops/agentic-copilot/chapters/00-start-here.md",
+      "line": 78
+    },
+    {
+      "id": "journey",
+      "note": "8章39節の番号と成果の受け渡し、本編と独立演習の区別が一致。",
+      "file": "workshops/agentic-copilot/chapters/00-start-here.md",
+      "line": 115
+    },
+    {
+      "id": "prerequisites",
+      "note": "信頼画面の断定を修正。実習資産未同梱と機能・モデルの事前確認は維持。",
+      "findings": [
+        "R02"
+      ],
+      "file": "workshops/agentic-copilot/chapters/00-start-here.md",
+      "line": 156
+    },
+    {
+      "id": "scenario",
+      "note": "AC正本とF1〜F6を照合。自動的に文脈へ渡ることと参照可能性を区別。",
+      "findings": [
+        "R01"
+      ],
+      "file": "workshops/agentic-copilot/chapters/00-start-here.md",
+      "line": 243
+    },
+    {
+      "id": "sec01-observe",
+      "note": "二つの依頼は目的が違うため利用量のA/Bでないこと、読取境界を確認。",
+      "file": "workshops/agentic-copilot/chapters/01-foundations.md",
+      "line": 1
+    },
+    {
+      "id": "sec01-context",
+      "note": "文字数・コンテキスト・利用量・時間を区別。最終値の記録を追加。",
+      "findings": [
+        "R09"
+      ],
+      "file": "workshops/agentic-copilot/chapters/01-foundations.md",
+      "line": 66
+    },
+    {
+      "id": "sec01-handoff",
+      "note": "ツール制限と根拠・次の問いを対応。版付き操作例を追加。",
+      "findings": [
+        "R06"
+      ],
+      "file": "workshops/agentic-copilot/chapters/01-foundations.md",
+      "line": 120
+    },
+    {
+      "id": "sec02-map",
+      "note": "資料・コード・実行の区別を確認。AGENTS.mdの初出説明を本文へ。",
+      "findings": [
+        "R05"
+      ],
+      "file": "workshops/agentic-copilot/chapters/02-discovery-and-planning.md",
+      "line": 1
+    },
+    {
+      "id": "sec02-structure",
+      "note": "共通取得処理と全体集計の分離、配色の既存契約、DBへの副作用を確認。",
+      "file": "workshops/agentic-copilot/chapters/02-discovery-and-planning.md",
+      "line": 67
+    },
+    {
+      "id": "sec02-options",
+      "note": "改善候補の列挙と実装範囲の合意を分離している。",
+      "file": "workshops/agentic-copilot/chapters/02-discovery-and-planning.md",
+      "line": 124
+    },
+    {
+      "id": "sec02-requirements",
+      "note": "AND・0件・400・空文字と空白の期待値を正本と照合。",
+      "findings": [
+        "R01"
+      ],
+      "file": "workshops/agentic-copilot/chapters/02-discovery-and-planning.md",
+      "line": 172
+    },
+    {
+      "id": "sec02-plan",
+      "note": "未決事項を捨てず、決定済み範囲と分離するよう統一。",
+      "findings": [
+        "R03"
+      ],
+      "file": "workshops/agentic-copilot/chapters/02-discovery-and-planning.md",
+      "line": 232
+    },
+    {
+      "id": "sec03-classify",
+      "note": "継続規則と今回の要求、AGENTS.mdとCLAUDE.mdの扱いを確認。",
+      "file": "workshops/agentic-copilot/chapters/03-custom-instructions.md",
+      "line": 1
+    },
+    {
+      "id": "sec03-baseline",
+      "note": "A/B/Cの開始状態・公開挙動・共通確認を維持し、最初の編集への切替を補足。",
+      "findings": [
+        "R04",
+        "R06",
+        "R12"
+      ],
+      "file": "workshops/agentic-copilot/chapters/03-custom-instructions.md",
+      "line": 59
+    },
+    {
+      "id": "sec03-design",
+      "note": "applyToの作成・変更時の適用とdescriptionの役割を区別。",
+      "file": "workshops/agentic-copilot/chapters/03-custom-instructions.md",
+      "line": 145
+    },
+    {
+      "id": "sec03-apply",
+      "note": "発見・適用・遵守、診断用コピーと本試行を混同していない。",
+      "file": "workshops/agentic-copilot/chapters/03-custom-instructions.md",
+      "line": 203
+    },
+    {
+      "id": "sec03-decide",
+      "note": "比較の限界と原記録を残す項目を整理。除外設定の説明を限定。",
+      "findings": [
+        "R12",
+        "R13"
+      ],
+      "file": "workshops/agentic-copilot/chapters/03-custom-instructions.md",
+      "line": 256
+    },
+    {
+      "id": "sec04-roles",
+      "note": "R0/R1とV0/V1は別の比較。役割と実効ツールの差を記録する条件を確認。",
+      "file": "workshops/agentic-copilot/chapters/04-custom-agents-and-skills.md",
+      "line": 1
+    },
+    {
+      "id": "sec04-agent",
+      "note": "front matter例と実効ツールの確認を対応。レビューの非編集・非実行を維持。",
+      "findings": [
+        "R07"
+      ],
+      "file": "workshops/agentic-copilot/chapters/04-custom-agents-and-skills.md",
+      "line": 58
+    },
+    {
+      "id": "sec04-skill",
+      "note": "発見・呼出し・実行を区別。Plugin表記を訂正し、RuffのMarkdown対象の説明は維持。",
+      "findings": [
+        "R08"
+      ],
+      "file": "workshops/agentic-copilot/chapters/04-custom-agents-and-skills.md",
+      "line": 154
+    },
+    {
+      "id": "sec04-handoff",
+      "note": "版・差分・原記録・未確認・受取側のアクセスを一組で渡す条件を確認。",
+      "file": "workshops/agentic-copilot/chapters/04-custom-agents-and-skills.md",
+      "line": 245
+    },
+    {
+      "id": "sec04-adopt",
+      "note": "実務での不採用と演習での利用を区別。重複した自己確認を統合。",
+      "findings": [
+        "R12"
+      ],
+      "file": "workshops/agentic-copilot/chapters/04-custom-agents-and-skills.md",
+      "line": 308
+    },
+    {
+      "id": "sec05-request",
+      "note": "未決仕様、既決AC、テスト先行、今回触れない範囲を確認。",
+      "file": "workshops/agentic-copilot/chapters/05-implementation-and-debugging.md",
+      "line": 1
+    },
+    {
+      "id": "sec05-tests",
+      "note": "12件fixture、独立F1〜F6、既定pending、部署ID [9,5,1]、狙った赤を照合。",
+      "file": "workshops/agentic-copilot/chapters/05-implementation-and-debugging.md",
+      "line": 50
+    },
+    {
+      "id": "sec05-increment",
+      "note": "三つの変更単位と検証・修正の分離を維持。パッチ検品テストの結果を一般化しない。",
+      "findings": [
+        "R04"
+      ],
+      "file": "workshops/agentic-copilot/chapters/05-implementation-and-debugging.md",
+      "line": 163
+    },
+    {
+      "id": "sec05-debug",
+      "note": "起動失敗と仕様不一致を区別。意図的に誤ったerror型の診断例は解説と対応。",
+      "file": "workshops/agentic-copilot/chapters/05-implementation-and-debugging.md",
+      "line": 218
+    },
+    {
+      "id": "sec05-quality",
+      "note": "APIと画面、配色の送信・解除、専用DB、回帰の注意を整理。",
+      "findings": [
+        "R12"
+      ],
+      "file": "workshops/agentic-copilot/chapters/05-implementation-and-debugging.md",
+      "line": 295
+    },
+    {
+      "id": "sec06-human",
+      "note": "HITL/HOTLは設定名でなく進め方。実操作は発展のまま。",
+      "file": "workshops/agentic-copilot/chapters/06-review-and-quality.md",
+      "line": 1
+    },
+    {
+      "id": "sec06-counterexample",
+      "note": "AND=F1、OR=F1/F2/F3/F5をF表と照合。",
+      "file": "workshops/agentic-copilot/chapters/06-review-and-quality.md",
+      "line": 44
+    },
+    {
+      "id": "sec06-cases",
+      "note": "採否・介入・継続と再開の四事例は仮定であり実測ではない。",
+      "file": "workshops/agentic-copilot/chapters/06-review-and-quality.md",
+      "line": 107
+    },
+    {
+      "id": "sec06-verify",
+      "note": "同じ版で赤→緑→再レビュー。未追跡ファイルの内容と記録前後の識別を補完。",
+      "findings": [
+        "R05",
+        "R10"
+      ],
+      "file": "workshops/agentic-copilot/chapters/06-review-and-quality.md",
+      "line": 179
+    },
+    {
+      "id": "sec06-mainline",
+      "note": "独立演習の成功を本編へ流用せず、ACごとの根拠と残課題を渡す。",
+      "file": "workshops/agentic-copilot/chapters/06-review-and-quality.md",
+      "line": 255
+    },
+    {
+      "id": "sec07-requirements",
+      "note": "アプリの事実と仮想構成、ACとDRを区別。全員の設計作業と条件付き実行を明示。",
+      "findings": [
+        "R11"
+      ],
+      "file": "workshops/agentic-copilot/chapters/07-delivery-definitions.md",
+      "line": 1
+    },
+    {
+      "id": "sec07-terraform",
+      "note": "HCL例は完成構成ではない。validateと実環境適合・plan/applyを区別。",
+      "file": "workshops/agentic-copilot/chapters/07-delivery-definitions.md",
+      "line": 95
+    },
+    {
+      "id": "sec07-pipeline",
+      "note": "起動条件・品質ゲート、0件・スキップ・起動不能、梱包除外の条件を保持。",
+      "findings": [
+        "R11"
+      ],
+      "file": "workshops/agentic-copilot/chapters/07-delivery-definitions.md",
+      "line": 170
+    },
+    {
+      "id": "sec07-change",
+      "note": "DR-11/12追加で初期条件を保つ。成果物照合の必須項目を本文へ。",
+      "findings": [
+        "R11"
+      ],
+      "file": "workshops/agentic-copilot/chapters/07-delivery-definitions.md",
+      "line": 272
+    },
+    {
+      "id": "sec07-review",
+      "note": "読解・仕様照合・ローカル・実環境の段階を区別し、未実施を成功にしない。",
+      "findings": [
+        "R11"
+      ],
+      "file": "workshops/agentic-copilot/chapters/07-delivery-definitions.md",
+      "line": 340
+    },
+    {
+      "id": "sec08-question",
+      "note": "本編とは別のcount欠陥を使い、観測と仮説を分離。",
+      "file": "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md",
+      "line": 1
+    },
+    {
+      "id": "sec08-conditions",
+      "note": "関連パスだけを変え、Aの探索や安全条件を弱めない。",
+      "file": "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md",
+      "line": 45
+    },
+    {
+      "id": "sec08-trial",
+      "note": "試行別の依頼・最終利用量・時間範囲・未取得を明示。",
+      "findings": [
+        "R09"
+      ],
+      "file": "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md",
+      "line": 111
+    },
+    {
+      "id": "sec08-decision",
+      "note": "条件→品質→負担の順。Bの勝利と単発結果の一般化を要求しない。",
+      "file": "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md",
+      "line": 176
+    },
+    {
+      "id": "sec08-procedure",
+      "note": "改善手順の作成と効果の実証を区別。停止・再開が具体的。",
+      "file": "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md",
+      "line": 235
+    },
+    {
+      "id": "sec08-transfer",
+      "note": "自己確認、AI確認、人の第三者確認を別記録にする。",
+      "file": "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md",
+      "line": 304
+    },
+    {
+      "id": "reference",
+      "note": "本文と用語集の説明を同期し、環境別の提供条件を保持。",
+      "findings": [
+        "R05",
+        "R13"
+      ],
+      "file": "workshops/agentic-copilot/chapters/09-reference.md",
+      "line": 1
+    },
+    {
+      "id": "draft-review",
+      "note": "実行・読解・支援・未確認を区別して振り返り、必要な章へ戻れる。",
+      "file": "workshops/agentic-copilot/chapters/09-reference.md",
+      "line": 98
+    }
+  ],
+  "diagram_review": {
+    "files": [
+      "context.svg",
+      "delivery.svg",
+      "evaluation.svg",
+      "evidence.svg",
+      "human-loop.svg",
+      "implementation.svg",
+      "instructions.svg",
+      "journey.svg",
+      "roles.svg",
+      "test-data.svg"
+    ],
+    "result": "title・desc・textと本文の代替テキストを照合。独立データ、引き継ぎ、品質判断、非実行境界、非実測の図という説明に不一致は見つからず、文言変更なし。描画上のラベル・線・狭幅はブラウザーテストで別に検査。"
+  },
+  "verification_files": [
+    "material-review-2026-10-27/checks.json",
+    "material-review-2026-10-27/reference-tests.json",
+    "material-review-2026-10-27/git-recording.json",
+    "material-review-2026-10-27/bold-mutation.json"
+  ],
+  "limitations": [
+    "改訂後の依頼例をCopilotへ全章通して再送信する、新しい実機ドライランは行っていない。",
+    "人の初学者による理解度評価、講師/TAの第三者確認、所要時間の実測は未実施。",
+    "組織ごとの機能・モデル提供条件、Codespaces、クラウドへの実際の適合は未確認。",
+    "固定アプリの実行はパッチ検品テストの5状態に限定し、今回新たに全ACのアプリ動作を確認したとは扱わない。",
+    "duration_minutes未設定、参加者向け実習資産の準備、モデル候補のオーナー判断など既存の未決事項は閉じない。"
+  ],
+  "source_sha256": {
+    "workshops/agentic-copilot/workshop.md": "138cd52a6f09e1b794e328952fb2b72665a4175610e1a9b81a61e19f480452d1",
+    "workshops/agentic-copilot/chapters/00-start-here.md": "d1895d0b63a822b63bd24919da49d5287248f7f8c35336a6fb602e8fa1fa0a44",
+    "workshops/agentic-copilot/chapters/01-foundations.md": "343cc7327cca20863a5b760f97279dd61423b221c36f3b2455967d8ae0a23481",
+    "workshops/agentic-copilot/chapters/02-discovery-and-planning.md": "7827b97099404c22f1996d0f93d3ae66ec6b1a660e2c2eaaa8b7c75d9b67638e",
+    "workshops/agentic-copilot/chapters/03-custom-instructions.md": "d3af1120a246ff060c2c687427f2fb676f3811595f8852f95939e83819ce2ad9",
+    "workshops/agentic-copilot/chapters/04-custom-agents-and-skills.md": "46d4e297ef27acdb7c4dee4ab7372b12de13537b3d6c52385d707622ae88932b",
+    "workshops/agentic-copilot/chapters/05-implementation-and-debugging.md": "fa350f3d0142c297a1b52c2f63a040da5dcf2d35f2973fb567ea43c21db975ba",
+    "workshops/agentic-copilot/chapters/06-review-and-quality.md": "6112ce2a15712f8615f8922f5edfad6d84a20d29bf8aff16f9ce71bc091c957e",
+    "workshops/agentic-copilot/chapters/07-delivery-definitions.md": "c17ff4c437aa730ff5ace00e8d8e1a8ac492aad99ded526afa62039596ed6ba0",
+    "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md": "b8cd774451768ed5dd32e331db504a53989590937e75c881aa0e745a9d58b72a",
+    "workshops/agentic-copilot/chapters/09-reference.md": "04671ca96685907081e3fa2fc2dcde52d5a1cbac1bfbbd729ac745ad433ebbdd",
+    "workshops/agentic-copilot/assets/journey.svg": "9d033108db07339f8c94db542690240096cd6f8c39814ffad1301bb823b94230",
+    "workshops/agentic-copilot/assets/context.svg": "3a1dd48e893cdf52b778428e71e20853fa684a0a3802ee2a9fabe6236f762397",
+    "workshops/agentic-copilot/assets/evidence.svg": "90d54e49eb596b3c45b7f3e95ef709ead7ff587b4ec596f5964e3a9abc29be32",
+    "workshops/agentic-copilot/assets/instructions.svg": "e5b800281b5ff634d96f69c1e977cbb9595449403e306a07a445c1f4f635ebe3",
+    "workshops/agentic-copilot/assets/roles.svg": "2e62636edfd785f710d872550e974bf233ed37475b6f7470ebfe7ab0e3c09cd4",
+    "workshops/agentic-copilot/assets/test-data.svg": "882cf077b3b26a4dcae2ef96e35379aae0ece1f3e12149d92257e09f3b4ee902",
+    "workshops/agentic-copilot/assets/implementation.svg": "7b037516b0eda8f93ede616b9e901a95b50caa90666c1571dd2653396f7ad936",
+    "workshops/agentic-copilot/assets/human-loop.svg": "3dba61c40872cca485d4bb5b5096fc9c2f48c725816874dbd10a25647cb5a79c",
+    "workshops/agentic-copilot/assets/delivery.svg": "82cffaa9f2448ccc6f5eba99bd6d3333e396d7d5ac3a9b7e013d01a554f4250e",
+    "workshops/agentic-copilot/assets/evaluation.svg": "e8029233295c28f7853f58a06858a2f2b326ca92364632f3fabba9ed9109bb08"
+  },
+  "rendered_content_sha256": "010b56a483835a03c7163dd8eb840e50581cf6be356b147773dd8ae6b0949ae0",
+  "verification_sha256": {
+    "material-review-2026-10-27/checks.json": "b9541fb78ab78efc0d5a50a26508e6999a267aba284baca101c8025ca286c319",
+    "material-review-2026-10-27/reference-tests.json": "79ac01622537e232b6086e654e25f7ad5fbe6673a24967cd2f361ca551f3355c",
+    "material-review-2026-10-27/git-recording.json": "06e33afec4219f45bc4de0819e10cbd681aaccfccad78bf4ecd2dd30e704cfda",
+    "material-review-2026-10-27/bold-mutation.json": "9a57d55992601dc59589b4f146e5cc312c9898381484e5ead60dd96b39e648d9"
+  },
+  "preservation_check": "Canonical scenario and the prior VS Code dry-run record/artifacts are unchanged from baseline_commit.",
+  "aggregation_correction": "Initial evidence aggregation read dist/build-info.json and failed with ENOENT. It was corrected to use the repository-exported DIST, then source/build identity was checked successfully; no test result was inferred from the failed aggregation.",
+  "verification_summary": {
+    "pages": 47,
+    "svg": 10,
+    "local_links": 254,
+    "unit_tests": 15,
+    "browser_tests": 5,
+    "reference_test_variants": 5,
+    "rendered_emphasis": "The malformed full-width-parenthesis emphasis was detected in the actual MOAW viewer; restored material then passed all browser tests.",
+    "warning": "duration_minutes remains unset. A passing content check does not mean publication readiness or participant comprehension."
+  },
+  "supporting_sources": [
+    "authoring/README.md",
+    "docs/design/common-scenario.md",
+    "docs/design/sections/07-delivery-definitions.md",
+    "docs/design/workshop-preparation.md",
+    "https://code.visualstudio.com/docs/agent-customization/custom-instructions",
+    "https://code.visualstudio.com/docs/agent-customization/custom-agents",
+    "https://code.visualstudio.com/docs/agent-customization/agent-skills",
+    "https://docs.astral.sh/ruff/configuration/#default-inclusions"
+  ],
+  "cleanup": {
+    "status": "complete",
+    "scope": "Only temporary directories created or positively attributed to these probes; evidence JSON and session scripts are retained.",
+    "verified_absent": [
+      ".cache/review-followup-20261027",
+      "dedicated native WSL source and virtual environment",
+      "the three retained pytest directories identified by their exact mutation post-images",
+      "pytest-current symlink that pointed to the last owned directory"
+    ],
+    "preserved": [
+      "shared pytest temporary root",
+      "pre-existing preview and unrelated caches",
+      "historical validation records",
+      "main checkout"
+    ]
+  },
+  "git_blob_sha256": {
+    "workshops/agentic-copilot/workshop.md": "cf5b68471885fb53f784a17e34c0ce26cd4cf6be36f9b3a30d14727ff458347a",
+    "workshops/agentic-copilot/chapters/00-start-here.md": "9b10a7eb63892d052f1617890ee6c0ac55b8c7ec4b1d5d922c1defda0afa6f84",
+    "workshops/agentic-copilot/chapters/01-foundations.md": "e28b98fbb16c76f6d70a83f3b0023447762d8d159529c7c05607d16e9e5c6391",
+    "workshops/agentic-copilot/chapters/02-discovery-and-planning.md": "6945bf3f5297bf68ff3a4a90f259d71a088eca97a8f207c9c1ac119bf7f33ebf",
+    "workshops/agentic-copilot/chapters/03-custom-instructions.md": "add8f6083692e0335b89e5cca8c3627af26a0dca99bbd2e4ed1b7658c101a2ba",
+    "workshops/agentic-copilot/chapters/04-custom-agents-and-skills.md": "6695b70a934357eddd19edabdfbdee35c13b9070bf0763bde0efd2ccd4e743fe",
+    "workshops/agentic-copilot/chapters/05-implementation-and-debugging.md": "68fa07ee6e7b7f53b5d9f3ff0b0e7edc7904d1ba3a4055c87510821c791adcfc",
+    "workshops/agentic-copilot/chapters/06-review-and-quality.md": "612c8813dd7b3ddd9c94a97965febe79717bb931a2b6dd3a478cb4649ba44bf0",
+    "workshops/agentic-copilot/chapters/07-delivery-definitions.md": "17b152ee0142348e06beecc2735a394c158bb66f84c34b701fedeac19e832cc3",
+    "workshops/agentic-copilot/chapters/08-token-economy-and-transfer.md": "634b3c35c60202ee9743a29e64b29d43b0587f3f47b58dd6af1965286352e3e9",
+    "workshops/agentic-copilot/chapters/09-reference.md": "bb72a5bf8a8fbb63d5df1edf7df6ce0f52c3a3c94fbb190b16856a61556e2074",
+    "workshops/agentic-copilot/assets/journey.svg": "bc6785f856c5fb0f4673523e7dbe3afbd13038abaed8c197b7176ef9d0ebc861",
+    "workshops/agentic-copilot/assets/context.svg": "e6f611faccd445ea8ff8b2ae44af7e7328f0fc233f1fb316cbe5b4e6f9c594a7",
+    "workshops/agentic-copilot/assets/evidence.svg": "46f9bda70bf116cd730747223348f0f09dc81c1f97409539565f110dac96d813",
+    "workshops/agentic-copilot/assets/instructions.svg": "9daab4b53871bd2ffefb58fb3581e8c4b9b36806f725d945df0070108562c2b3",
+    "workshops/agentic-copilot/assets/roles.svg": "5c409618f19fb6c028254d15bc7a1c642b94ed620a4a68a42795b905d9465ed1",
+    "workshops/agentic-copilot/assets/test-data.svg": "3e0964f2da6c85dcd5dfc3424bcdc4f7e14be60a4c51f9e311c331fbecf6059f",
+    "workshops/agentic-copilot/assets/implementation.svg": "5ee031fb1dbdd9abf255e64a5507806bf934f8265eb3a9a2988628c773b9aa96",
+    "workshops/agentic-copilot/assets/human-loop.svg": "df7059e15000ba7f8e1667c4d2d3abad33f3525b8fadc9fdd13bfe9f95476cee",
+    "workshops/agentic-copilot/assets/delivery.svg": "46ef0ff60c46762f649807688c9290bc5e5c08543a14c1cd662a48eda46e3ec6",
+    "workshops/agentic-copilot/assets/evaluation.svg": "26298acdf2e843414dc538a520016c66e6c75a5a4b4b8f4fe8d7eda74a5c175a"
+  },
+  "verified_content_revision": "636dc95b92a5c01382ee6c6384d074998e547cb4",
+  "source_identity_note": "source_sha256 and rendered_content_sha256 identify the tested Windows checkout/build (CRLF). git_blob_sha256 identifies the committed source bytes (LF) at verified_content_revision. Every source was compared and differs only by checkout line endings. verification_sha256 matches the committed evidence JSON bytes exactly. The later report-only metadata commit does not change the tested source or execution logs."
+}

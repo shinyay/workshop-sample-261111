@@ -1,0 +1,11 @@
+{
+  "actor": "coordinator simulated judgment, not human approval",
+  "decision": "additional evaluation",
+  "quality": "A and B both passed98 tests, four native checks, and132-request oracle with zero failures",
+  "conditions": "Starting source/data, model, instructions, permissions and checks correspond; the intended between-condition difference is B-only path specification. Different observed search ranges are outcomes, not a newly imposed setup difference.",
+  "reason": "One ordered pair with shared runtime/cache and unmeasured reference-preparation/maintenance cost cannot establish general causal or monetary benefit.",
+  "next_pair": "Retain reference specification as the only between-condition variable; predeclare B then A for the next independent pair. Do not force both agents to search the same paths or give A the B reference line.",
+  "measurement": "Use one modelMetrics usage aggregate. Input includes non-cache and cache-read/write subtotals; do not add them again. Output and reasoning are not summed.",
+  "correction_of_analysis": "The first reading mixed calibration32 failures with final0; corrected ledger separates phases. A tool total is17. The second reading proposed equalizing reference/search behavior; this decision corrects that proposal.",
+  "citation_mapping": "Full report uses results.A/results.B; compact result-ledger uses preparation_only/completed_trials. Main worktree4dbf is not proof of A/B edits."
+}

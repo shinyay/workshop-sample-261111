@@ -1,0 +1,45 @@
+{
+  "mutation": {
+    "original": "**fixture**（フィクスチャー）と呼びます",
+    "replacement": "**fixture（フィクスチャー）**と呼びます",
+    "shape_verified": true
+  },
+  "instrumentation_failures": [
+    {
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test",
+        "--grep",
+        "^all pages,"
+      ],
+      "exit_code": 1,
+      "stdout": "Error: No tests found\n\n",
+      "stderr": ""
+    }
+  ],
+  "instrumentation_note": "The initial anchored grep matched no tests; it is not evidence that the mutation was detected.",
+  "build": {
+    "command": [
+      "node",
+      "scripts/build.mjs"
+    ],
+    "exit_code": 0,
+    "stdout": "Built 47 pages and 10 SVGs with official MOAW sha.9deeac0.\nDRAFT PENDING: duration_minutes is intentionally unset: workshop duration has not been agreed\n",
+    "stderr": ""
+  },
+  "negative": {
+    "command": [
+      "node",
+      "node_modules/@playwright/test/cli.js",
+      "test",
+      "--grep",
+      "all pages,"
+    ],
+    "exit_code": 1,
+    "stdout": "\nRunning 1 test using 1 worker\n\n\n\n\n\n[1/1] scripts\\browser\\workshop.spec.mjs:97:1 › all pages, real code, SVG loading and every collapsed hint work in the official viewer\n  1) scripts\\browser\\workshop.spec.mjs:97:1 › all pages, real code, SVG loading and every collapsed hint work in the official viewer \n\n    Error: unrendered emphasis in sec05-tests\n\n    expect(received).not.toContain(expected) // indexOf\n\n    Expected substring: not \"**\"\n    Received string:        \"\n      Copilot活用ワークショップ はじめに はじめに｜学べることと身に付ける力 はじめに｜共通シナリオの全体像 はじめに｜本編8章の学習の流れ はじめに｜準備・記録・再開 はじめに｜共通シナリオと受け入れ条件 1-1｜回答だけでなく、仕事の進み方を見る 1-2｜Copilotに渡る情報と、作業全体の利用量を分ける 1-3｜一場面から次の問いを作る 2-1｜アプリの機能と今の動作をつかむ 2-2｜処理の役割とデータの流れを確かめる 2-3｜改善候補を広く考え、範囲を選ぶ 2-4｜変更依頼を、確認できる要件にする 2-5｜変更箇所と確認方法を計画にまとめる 3-1｜指示に残す情報を選ぶ 3-2｜Aの観察から、改善したい指示を考える 3-3｜共通指示と条件付き指示を設計する 3-4｜指示が見つかり、使われ、守られたかを確かめる 3-5｜比較を読み、規則を本編へ渡す 4-1｜担当の役割と、再利用する手順を分ける 4-2｜読み取り中心のレビューAgentを設計する 4-3｜検証・切り分け・報告のSkillを設計する 4-4｜同じ版の根拠を次の担当へ渡す 4-5｜演習で試すことと、実務での採用を分ける 5-1｜計画から、変更範囲を決めた実装依頼を作る 5-2｜テストが失敗した理由を確かめる先に、使うデータを確かめる演習確認の書き方の抜粋結果を確かめる 5-3｜三つの変更単位で実装と検証を回す 5-4｜実際の結果から原因を絞り、必要な修正をする 5-5｜画面・API・回帰を確認して引き継ぐ 6-1｜レビューを、人の判断まで含めて設計する 6-2｜AND/ORの反例から指摘を評価する 6-3｜四つの場面で、人が関わるか作業を続けるかを判断する 6-4｜追加検証、修正、再レビューをつなぐ 6-5｜自分の実装をレビューし、人の関わり方を見直す 7-1｜アプリの事実と配備・自動化の要件を分ける 7-2｜構成を考え、Terraformの入出力を作る 7-3｜CIの起動条件と、開始後の進行条件を分ける 7-4｜追加要件へ、差分で対応する 7-5｜定義を横断してレビューし、次の担当へ渡す 8-1｜経験を、比較できる一つの問いへ変える 8-2｜A/Bで変えるもの、揃えるもの 8-3｜A/Bを実行し、条件と結果を記録する 8-4｜条件、品質、負担の順に見て、採用するかを決める 8-5｜次に使う改善手順を一つにまとめる 8-6｜自己確認・第三者確認と、実務への置き換え 補足｜用語と参照先 補足｜学習の振り返りと再開GitHub Copilot：開発の任せ方とトークンエコノミー\n    \n    \n    5-2｜テストが失敗した理由を確かめる #この節のゴール: テストが狙った未実装を検出し、実装後には同じ入力条件と期待結果で成功することを確かめられることです。\n    最初は部署の絞り込みを扱います。必要な行、不要な行、返却件数を、ACと使用するテストデータから決めます。\n    テストの失敗を「赤」、成功を「緑」と呼ぶことがあります。ただし、失敗なら何でもよいわけではありません。狙った機能がまだないために失敗し、実装後に同じ条件と期待結果で成功することを確かめます。全ACを例外なくテスト先行にすることは求めません。\n    先に、使うデータを確かめる #テストに必要なデータや実行環境を用意する仕組みを、**fixture（フィクスチャー）**と呼びます。参照版の既存 fixtureは、テストごとの一時DBに初期12件を用意します。ブラウザーで申請を追加しても、このfixtureの件数は増えません。\n    「はじめに」のF1〜F6を使う場合は、別の新しい一時DBをで作り、6件だけを登録します。初期12件へ追加する方法ではありません。新しく作った申請は確認待ちになるため、承認済み・差し戻しの行は、作成後に既存の状態変更の手順で設定し、各行の状態を確かめます。\n    \n    三つは別々のデータであり、順にコピーする図ではありません。同じ検索条件でも、使ったデータが違えば期待するIDや件数も変わります。\n    演習 #\n    指定部署と別の部署を含むデータから、返るはずの申請IDと件数を決めてください。実装の条件式を使って答えを作るのではなく、ACとデータから判断します。\n    AC-02を確かめるテストを作り、実行してください。テストが起動し、対象が実行され、狙った機能がないために失敗したかを読み取ります。\n    失敗の理由を確認してから、部署の絞り込みを最小限実装するようCopilotへ依頼してください。\n    同じ確認と、既存の動作を壊していないかの回帰確認を実行してください。変更内容と、失敗・成功の結果を、それぞれ対象版と結び付けて記録します。\n    \n    テストの中で「実際の結果が期待どおりか」を確かめる文をアサーションと呼びます。テストが起動しただけでなく、そのアサーションまで実行されたかを見ます。\n    \n    \n    \n    順序\n    確かめること\n    \n    \n    \n    データを決める\n    指定部署とそれ以外を含め、返るはずの行をACとデータから説明できる\n    \n    \n    確認を作る\n    申請IDの集まり、重複・不足、各値、を確かめる\n    \n    \n    実際に走らせる\n    起動し、対象テストが見つかり、狙ったアサーションまで実行される\n    \n    \n    失敗理由を読む\n    必要なライブラリやデータの不足ではなく、機能が未実装のために失敗したか\n    \n    \n    実装後に戻る\n    同じ入力条件と期待結果で成功し、必要な回帰確認も通るか\n    \n    \n    不正な値や重複を400にする確認（負のテスト）は、実装前から成功することがあります。開始版は、どの検索条件も受け付けずに400を返すためです。この成功は、値を検査した証拠にはなりません。説明の文言が開始版と違うことを確かめるなど、狙った理由で拒否されたと分かる確認を加えてください。\n    確認の書き方の抜粋 #次はテスト本文で使うアサーションの抜粋です。は、続く条件が成り立たなければテストを失敗させます。は実際の結果、は既知データから決めた期待値に置き換え、手元の実習アプリのfixtureへ組み込んでください。説明用のF1等を、そのまま実IDとして使いません。\n    \n    集合の一致だけでなく長さも見ることで、同じIDの重複を見逃さないようにします。期待値は変更対象の実装から自動的に計算せず、ACと既知データから決めます。\n    \n    実行例：既存の初期12件fixtureから始める\n    \n    次は、参照版のにあるを使う例です。実習アプリのに保存します。初期12件では、開発部のIDは降順で9・5・1です。F1〜F6の期待値とは混ぜません。\n    \n    依存の準備後、アプリのルートで実行します。パスの区切りは、PowerShellでもBashでも同じ意味になるにしています。\n    \n    リストの一致は、IDの不足・余分・重複と順序をまとめて確認します。この例が未実装の開始版でと表示されて失敗したら、その入力を受け付けないことまで確認できています。起動や収集の失敗は別です。\n    Windowsで新しく作ったファイルは、改行の形式がCRLFになることがあります。この実習アプリの書式の確認（）はLFを求めるため、内容が同じに見えるのに「would be reformatted」と表示されたら、のように、そのファイルを整えてから確認し直します。\n    手元の実習アプリのデータが参照版と異なる場合は、そのデータでIDと状態を確認して期待値を決めます。\n    \n    \n    \n    \n    \n    テストが起動せず失敗した場合、「未実装だから赤になった」という証拠にできますか。\n    また、検索実装後も「有効な検索キーは400」という開始版限定テストを維持すべきでしょうか。\n    \n    \n    \n    結果を確かめる #失敗が依存不足やfixture不備ではなく、未実装の絞り込みによるものだったと説明してください。実装後は、期待するID集合と長さが一致し、がの実数と一致することを確かめます。\n    成功させるために、不正入力や回帰の確認を削除していないことも見直してください。\n    \n    ヒント：テストを実行できない失敗と、仕様の変更を分ける\n    \n    対象のアサーションまで実行されていなければ、その仕様を確かめていません。また、「検索がまだない開始版か」を識別する期待結果と、新機能を追加した後も保つべき期待結果は区別します。\n    \n    \n    \n    解説：正当なテスト更新\n    \n    検索対応を追加したら、その機能について開始版限定の400期待を更新します。不正値・重複キー・未知のキーを拒否する確認まで削除することは正当化されません。\n    完成例パッチの適用可否も、参加者独自の正しい実装を判断する基準にはしません。\n    参照版のは、講師用の完成例パッチを検品する確認です。本編の回帰確認では、5-3のとおり実行対象から外します。\n    や画面上の段階名も、機能の合格判定ではありません。演習版の分類を追加するときは、開始版と完成例の分岐を残し、演習版のラベルと機能のACを別々に確認します。\n    演習版の分岐へ「フォームがない」「複合条件は400」といった途中段階の期待を固定すると、次の正当な実装と衝突します。\n    Previous5-1｜計画から、変更範囲を決めた実装依頼を作るNext5-3｜三つの変更単位で実装と検証を回すmoaw (build: sha.9deeac0) \n    \n    \n    \"\n\n      125 |       return copy.textContent;\n      126 |     });\n    > 127 |     expect(prose, `unrendered emphasis in ${source.id}`).not.toContain('**');\n          |                                                              ^\n      128 |     for (const match of source.visible.matchAll(/!\\[[^\\]]+\\]\\(assets\\/([^)]*)\\)/g)) {\n      129 |       const image = page.locator(`img[src$=\"/${match[1]}\"]`);\n      130 |       await expect(image).toHaveCount(1);\n        at <workspace>\\scripts\\browser\\workshop.spec.mjs:127:62\n\n    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────\n    test-results\\browser\\workshop-all-pages-real-co-88fe7-work-in-the-official-viewer\\test-failed-1.png\n    ────────────────────────────────────────────────────────────────────────────────────────────────\n\n    Error Context: test-results\\browser\\workshop-all-pages-real-co-88fe7-work-in-the-official-viewer\\error-context.md\n\n\n  1 failed\n    scripts\\browser\\workshop.spec.mjs:97:1 › all pages, real code, SVG loading and every collapsed hint work in the official viewer \n",
+    "stderr": "(node:61308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:61308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+  },
+  "restored": true,
+  "positive_verification": "checks.json: npm run test:browser"
+}

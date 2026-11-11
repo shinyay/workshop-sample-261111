@@ -1,0 +1,125 @@
+{
+  "reference_commit": "1a411cd13c02f28bb6f3ac30844af204f1f61d48",
+  "python": "3.14.3",
+  "results": [
+    {
+      "variant": "baseline",
+      "mutation_shape_verified": true,
+      "source_sha256": "b6a2f29ef4c821d16f65199f71856b4423ca096e4917aafac6b3eba657cd1880",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "testcases": [
+        {
+          "name": "test_reference_patch_passes_behavior_and_reverses_exactly",
+          "status": "passed"
+        },
+        {
+          "name": "test_reference_patch_rejects_participant_changes_atomically",
+          "status": "passed"
+        }
+      ],
+      "stdout": "..                                                                       [100%]\n2 passed in 4.12s\n",
+      "stderr": ""
+    },
+    {
+      "variant": "nonconflicting_code_addition",
+      "mutation_shape_verified": true,
+      "source_sha256": "fa1ffcfbc42f368641a91dfaf93a59c5355a5949ba9c4db6acc7251983e49079",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "testcases": [
+        {
+          "name": "test_reference_patch_passes_behavior_and_reverses_exactly",
+          "status": "passed"
+        },
+        {
+          "name": "test_reference_patch_rejects_participant_changes_atomically",
+          "status": "passed"
+        }
+      ],
+      "stdout": "..                                                                       [100%]\n2 passed in 4.42s\n",
+      "stderr": ""
+    },
+    {
+      "variant": "query_validation_change",
+      "mutation_shape_verified": true,
+      "source_sha256": "e1177fe9f92e0e39380501fea8f0c5d200c1f51aa284e6da9e6d6dd740cc0e8d",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "testcases": [
+        {
+          "name": "test_reference_patch_passes_behavior_and_reverses_exactly",
+          "status": "failed"
+        },
+        {
+          "name": "test_reference_patch_rejects_participant_changes_atomically",
+          "status": "passed"
+        }
+      ],
+      "stdout": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n__________ test_reference_patch_passes_behavior_and_reverses_exactly ___________\ntests/test_reference_patch.py:84: in test_reference_patch_passes_behavior_and_reverses_exactly\n    assert checked.returncode == 0, checked.stderr\nE   AssertionError: error: patch failed: request_portal/__init__.py:156\nE     error: request_portal/__init__.py: patch does not apply\nE     \nE   assert 1 == 0\nE    +  where 1 = CompletedProcess(args=['git', '-c', 'core.autocrlf=false', '-c', 'core.eol=lf', 'apply', '--check', '/tmp/workshop-rev...tderr='error: patch failed: request_portal/__init__.py:156\\nerror: request_portal/__init__.py: patch does not apply\\n').returncode\n=========================== short test summary info ============================\nFAILED tests/test_reference_patch.py::test_reference_patch_passes_behavior_and_reverses_exactly\n1 failed, 1 passed in 0.14s\n",
+      "stderr": ""
+    },
+    {
+      "variant": "new_filtering_test",
+      "mutation_shape_verified": true,
+      "source_sha256": "b6a2f29ef4c821d16f65199f71856b4423ca096e4917aafac6b3eba657cd1880",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "testcases": [
+        {
+          "name": "test_reference_patch_passes_behavior_and_reverses_exactly",
+          "status": "failed"
+        },
+        {
+          "name": "test_reference_patch_rejects_participant_changes_atomically",
+          "status": "passed"
+        }
+      ],
+      "stdout": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n__________ test_reference_patch_passes_behavior_and_reverses_exactly ___________\ntests/test_reference_patch.py:84: in test_reference_patch_passes_behavior_and_reverses_exactly\n    assert checked.returncode == 0, checked.stderr\nE   AssertionError: error: tests/test_filtering.py: already exists in working directory\nE     \nE   assert 1 == 0\nE    +  where 1 = CompletedProcess(args=['git', '-c', 'core.autocrlf=false', '-c', 'core.eol=lf', 'apply', '--check', '/tmp/workshop-rev...ering.patch'], returncode=1, stdout='', stderr='error: tests/test_filtering.py: already exists in working directory\\n').returncode\n=========================== short test summary info ============================\nFAILED tests/test_reference_patch.py::test_reference_patch_passes_behavior_and_reverses_exactly\n1 failed, 1 passed in 0.06s\n",
+      "stderr": ""
+    },
+    {
+      "variant": "stage_change",
+      "mutation_shape_verified": true,
+      "source_sha256": "f1bd05fca42018f181f3493fbd54d1e97000d6757012145fdb86e181a69ccacb",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "testcases": [
+        {
+          "name": "test_reference_patch_passes_behavior_and_reverses_exactly",
+          "status": "error"
+        },
+        {
+          "name": "test_reference_patch_rejects_participant_changes_atomically",
+          "status": "error"
+        }
+      ],
+      "stdout": "EE                                                                       [100%]\n==================================== ERRORS ====================================\n_ ERROR at setup of test_reference_patch_passes_behavior_and_reverses_exactly __\ntests/test_reference_patch.py:73: in starter_copy\n    assert (directory / PATCH_FILES[0]).read_bytes().count(b'WORKSHOP_STAGE = \"starter\"') == 1\nE   assert 0 == 1\nE    +  where 0 = <built-in method count of bytes object at 0x110466a0>(b'WORKSHOP_STAGE = \"starter\"')\nE    +    where <built-in method count of bytes object at 0x110466a0> = b'import secrets\\nfrom collections.abc import Mapping\\nfrom datetime import datetime, timedelta, timezone\\nfrom hmac i...ase_path)\\n        return jsonify(application=\"request-portal\", stage=WORKSHOP_STAGE, status=\"ok\")\\n\\n    return app\\n'.count\nE    +      where b'import secrets\\nfrom collections.abc import Mapping\\nfrom datetime import datetime, timedelta, timezone\\nfrom hmac i...ase_path)\\n        return jsonify(application=\"request-portal\", stage=WORKSHOP_STAGE, status=\"ok\")\\n\\n    return app\\n' = read_bytes()\nE    +        where read_bytes = (PosixPath('<pytest-temp>/pytest-12/test_reference_patch_passes_be0/portal') / PosixPath('request_portal/__init__.py')).read_bytes\n_ ERROR at setup of test_reference_patch_rejects_participant_changes_atomically _\ntests/test_reference_patch.py:73: in starter_copy\n    assert (directory / PATCH_FILES[0]).read_bytes().count(b'WORKSHOP_STAGE = \"starter\"') == 1\nE   assert 0 == 1\nE    +  where 0 = <built-in method count of bytes object at 0x11029d00>(b'WORKSHOP_STAGE = \"starter\"')\nE    +    where <built-in method count of bytes object at 0x11029d00> = b'import secrets\\nfrom collections.abc import Mapping\\nfrom datetime import datetime, timedelta, timezone\\nfrom hmac i...ase_path)\\n        return jsonify(application=\"request-portal\", stage=WORKSHOP_STAGE, status=\"ok\")\\n\\n    return app\\n'.count\nE    +      where b'import secrets\\nfrom collections.abc import Mapping\\nfrom datetime import datetime, timedelta, timezone\\nfrom hmac i...ase_path)\\n        return jsonify(application=\"request-portal\", stage=WORKSHOP_STAGE, status=\"ok\")\\n\\n    return app\\n' = read_bytes()\nE    +        where read_bytes = (PosixPath('<pytest-temp>/pytest-12/test_reference_patch_rejects_p0/portal') / PosixPath('request_portal/__init__.py')).read_bytes\n=========================== short test summary info ============================\nERROR tests/test_reference_patch.py::test_reference_patch_passes_behavior_and_reverses_exactly\nERROR tests/test_reference_patch.py::test_reference_patch_rejects_participant_changes_atomically\n2 errors in 0.10s\n",
+      "stderr": ""
+    }
+  ],
+  "environment": {
+    "os": "WSL Ubuntu-24.04",
+    "python": "3.14.3",
+    "uv": "0.10.4",
+    "command": "UV_LINK_MODE=copy uv run --offline --locked python <probe.py>",
+    "test_command": "python -m pytest tests/test_reference_patch.py -q --tb=short -p no:cacheprovider --junitxml=<variant>.xml"
+  },
+  "reproduction": [
+    "Use independent copies of shinyay/python-portal-sample-app at the full reference_commit; restore the original files before each variant.",
+    "baseline: no changes.",
+    "nonconflicting_code_addition: append a newline and REVIEW_PROBE = True to request_portal/__init__.py; no other changes.",
+    "query_validation_change: replace the sole _validate_query_keys(set()) call with _validate_query_keys({\"department\"}).",
+    "new_filtering_test: create tests/test_filtering.py containing def test_review_probe(): and an indented assert True.",
+    "stage_change: replace the sole WORKSHOP_STAGE = \"starter\" assignment with WORKSHOP_STAGE = \"exercise\".",
+    "Check the exact post-image for every variant. Run both testcases and distinguish failure from setup error using JUnit; do not infer test execution from a nonzero process code alone."
+  ],
+  "environment_failures": [
+    {
+      "environment": "WSL virtual environment on the Windows-mounted long worktree path",
+      "exit_code": 2,
+      "failure": "uv failed to query metadata for the mypy stubgen entry point: No such file or directory (os error 2). No tests ran in this attempt.",
+      "recovery": "Copied the fixed source to a short, dedicated native Linux temporary directory and restored locked packages offline; all five variants then executed."
+    }
+  ]
+}

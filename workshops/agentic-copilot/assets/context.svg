@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="426" viewBox="0 0 360 426" role="img" aria-labelledby="context-title context-desc">
+  <title id="context-title">一度に渡す情報と、作業全体の利用量</title>
+  <desc id="context-desc">依頼、指示、履歴、参照したファイル、ツールの結果などが、AIへの一回の処理要求に関わる。複数回の要求を通じた利用量の合計は別に測る。図の大きさは実測値ではない。</desc>
+  <defs><marker id="context-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#context-arrow)}</style>
+  <text x="180" y="28" class="heading">集計する範囲が違う</text>
+  <rect x="20" y="48" width="320" height="106" rx="10" class="box"/>
+  <text x="180" y="79" class="heading">AIへの一回の処理要求</text>
+  <text x="180" y="110" class="label">依頼・指示・履歴・参照</text>
+  <text x="180" y="137" class="label">ツールが返した結果など</text>
+  <path d="M180 155V185" class="arrow"/>
+  <rect x="20" y="194" width="320" height="70" rx="10" class="box"/>
+  <text x="180" y="224" class="heading">調査・生成・確認を繰り返す</text>
+  <text x="180" y="250" class="label">一つの依頼で複数回になることも</text>
+  <path d="M180 265V296" class="arrow"/>
+  <rect x="20" y="305" width="320" height="78" rx="10" class="box"/>
+  <text x="180" y="335" class="heading">作業全体で使った合計量</text>
+  <text x="180" y="363" class="label">対象・単位・数える範囲を確認</text>
+  <text x="180" y="412" class="label">使用率や図の面積から換算しない</text>
+</svg>

@@ -1,0 +1,42 @@
+{
+  "fixed_native_entries": [
+    "rehearsal-pytest.cmd",
+    "rehearsal-lint.cmd",
+    "rehearsal-format.cmd",
+    "rehearsal-types.cmd"
+  ],
+  "underlying_checks": [
+    "uv run --no-sync --locked python -m pytest --ignore=tests\\test_reference_patch.py -q",
+    "uv run --no-sync --locked ruff check --no-cache .",
+    "uv run --no-sync --locked ruff format --check --no-cache .",
+    "uv run --no-sync --locked mypy request_portal"
+  ],
+  "coordinator_check": "Fixed six-row UI/API contract: ID sets/content/order/length/count, valid zero,400 input cases, invariant global/status aggregates;132 requests in this run.",
+  "exit_condition": "All agreed checks run on the same final source, positive collection, no failures/errors/skips, immutable tests/instructions/dependencies, application-only diff, explicit unverified surfaces.",
+  "helper_entry_scope": "The .cmd names are dedicated to this rehearsal, not universal installed commands. For a new trial the preparation owner must supply and demonstrate equivalent fixed entries and the oracle before any agent runs. Do not improvise a weaker substitute if missing.",
+  "browser_scope": "This pair used HTTP/HTML checks and unchanged UI sources, not a repeated real keyboard/browser exercise.",
+  "historical_allowed_application_paths": [
+    "request_portal\\__init__.py",
+    "request_portal\\__main__.py",
+    "request_portal\\demo_data.py",
+    "request_portal\\domain.py",
+    "request_portal\\static\\portal.css",
+    "request_portal\\storage.py",
+    "request_portal\\templates\\base.html",
+    "request_portal\\templates\\detail.html",
+    "request_portal\\templates\\error.html",
+    "request_portal\\templates\\list.html",
+    "request_portal\\templates\\new.html"
+  ],
+  "future_allowed_scope": "Before the next pair, list allowed application paths and immutable tests/dependencies/instructions/definitions with hashes. Only those paths may change; preserve current diff and check source hashes in each condition. No access to other copies, completed solutions, private settings or credentials.",
+  "equivalent_entry_contract": [
+    "Same selected checks, argv (apart from per-condition output paths), working-directory role, OS/runtime/tool versions and lock",
+    "Same test population/AC and regression coverage, expected positive collection, exit-status and failure/error/skip handling",
+    "Same JSON/JUnit/log output shape including input/final source identity and actual command/exit; no silent success or skip",
+    "Demonstrate green on the correct source and expected red on the count-only defect before freezing both copies",
+    "Entrypoint filenames can differ from historical .cmd names on a future platform, but must be identical in role and contract within the new pair"
+  ],
+  "same_source_meaning": "Each condition ties its own final source to its own check results. A/B final implementations need not have identical bytes or diffs.",
+  "failure_routing": "Expected defect failures stay with the implementation role for authorized repair. Broken shared checks or missing/mismatched baseline assets stop for preparation; scope/specification/safety decisions go to the decision role.",
+  "missing_metrics": "Missing optional charge/mental-time/third-party metrics do not block. Missing a utilization field defers only utilization comparison; missing mandatory source/condition/quality evidence prevents completion."
+}

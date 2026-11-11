@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640" role="img" aria-labelledby="test-data-title test-data-desc">
+  <title id="test-data-title">使うデータと期待する結果をそろえる</title>
+  <desc id="test-data-desc">ブラウザーのデモDBは初回12件で、操作後のデータを維持する。既存client fixtureはテストごとに初期12件の一時DBを使う。説明用F1からF6は、初期データを入れない別の一時DBに6件だけ登録する。三つのデータは独立しており、選んだデータから期待するID集合と件数を決める。</desc>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:20px;font-weight:700}.label{font-size:18px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.note{fill:#f4f4f4;stroke:#666;stroke-width:1.5}</style>
+  <text x="180" y="30" class="heading">使うデータを先に決める</text>
+  <rect x="20" y="52" width="320" height="140" rx="10" class="box"/>
+  <text x="180" y="84" class="heading">ブラウザーのデモDB</text>
+  <text x="180" y="114" class="label">初回は12件</text>
+  <text x="180" y="144" class="label">操作後のデータを引き継ぐ</text>
+  <text x="180" y="174" class="label">再起動だけでは戻らない</text>
+  <rect x="20" y="216" width="320" height="140" rx="10" class="box"/>
+  <text x="180" y="248" class="heading">既存テストのclient</text>
+  <text x="180" y="278" class="label">テストごとに初期12件を作る</text>
+  <text x="180" y="308" class="label">一時DBを使う</text>
+  <text x="180" y="338" class="label">デモDBを変えても影響しない</text>
+  <rect x="20" y="380" width="320" height="140" rx="10" class="box"/>
+  <text x="180" y="412" class="heading">説明用F1〜F6のfixture</text>
+  <text x="180" y="442" class="label">6件だけの一時DBを作る</text>
+  <text x="180" y="472" class="label">初期12件へ追加しない</text>
+  <text x="180" y="502" class="label">F番号と実IDを対応づける</text>
+  <rect x="20" y="544" width="320" height="78" rx="10" class="note"/>
+  <text x="180" y="575" class="label">使うデータから期待値を決める</text>
+  <text x="180" y="605" class="label">DB間で結果を流用しない</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="634" viewBox="0 0 360 634" role="img" aria-labelledby="evaluation-title evaluation-desc">
+  <title id="evaluation-title">条件と品質を確かめてから、採用するかを決める</title>
+  <desc id="evaluation-desc">比較条件、必要な品質、記録できた利用量や時間と人の負担、結果の解釈と限界の順に確かめてから、採用するかを決める。不足があれば比較できる範囲を限定する。Bの勝利や削減率を前提にしない。</desc>
+  <defs><marker id="evaluation-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#evaluation-arrow)}</style>
+  <text x="180" y="28" class="heading">小さい数値だけで選ばない</text>
+  <rect x="20" y="46" width="320" height="76" rx="10" class="box"/>
+  <text x="180" y="77" class="heading">1. 比較条件</text>
+  <text x="180" y="105" class="label">対象・要求・変えた条件を確認</text>
+  <path d="M180 123V156" class="arrow"/>
+  <rect x="20" y="165" width="320" height="76" rx="10" class="box"/>
+  <text x="180" y="196" class="heading">2. 必要な品質</text>
+  <text x="180" y="224" class="label">失敗・未完了を成功にしない</text>
+  <path d="M180 242V275" class="arrow"/>
+  <rect x="20" y="284" width="320" height="76" rx="10" class="box"/>
+  <text x="180" y="315" class="heading">3. 利用量・時間・人の負担</text>
+  <text x="180" y="343" class="label">数えた範囲・取得できない値</text>
+  <path d="M180 361V394" class="arrow"/>
+  <rect x="20" y="403" width="320" height="76" rx="10" class="box"/>
+  <text x="180" y="434" class="heading">4. 分かったことと限界</text>
+  <text x="180" y="462" class="label">事実・推測・不明点を分ける</text>
+  <path d="M180 480V513" class="arrow"/>
+  <rect x="20" y="522" width="320" height="76" rx="10" class="box"/>
+  <text x="180" y="553" class="heading">5. 採用するかを決める</text>
+  <text x="180" y="581" class="label">限定採用・追加評価・見送り</text>
+  <text x="180" y="622" class="label">Bの勝利や削減率は前提にしない</text>
+</svg>

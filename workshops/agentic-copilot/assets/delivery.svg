@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="588" viewBox="0 0 360 588" role="img" aria-labelledby="delivery-title delivery-desc">
+  <title id="delivery-title">要件から二つの定義を作り、対応を確かめる</title>
+  <desc id="delivery-desc">アプリの事実と配備要件からTerraformとAzure Pipelinesの定義を作る。資源や設定と、自動確認や成果物の受け渡しが、同じ版・設定・配備先・成果物を指すかを確かめる。CDは定義案だけであり、接続・適用・パイプライン実行は行わない。</desc>
+  <defs><marker id="delivery-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#delivery-arrow)}</style>
+  <text x="180" y="28" class="heading">要件を二つの定義へつなぐ</text>
+  <rect x="20" y="46" width="320" height="80" rx="10" class="box"/>
+  <text x="180" y="77" class="heading">アプリの事実＋配備要件</text>
+  <text x="180" y="106" class="label">想定する構成・管理する範囲</text>
+  <path d="M180 127V164" class="arrow"/>
+  <path d="M20 86H8V352H19" class="arrow"/>
+  <rect x="20" y="173" width="320" height="88" rx="10" class="box"/>
+  <text x="180" y="204" class="heading">Terraform</text>
+  <text x="180" y="235" class="label">資源・設定・入力値と出力値</text>
+  <rect x="20" y="308" width="320" height="88" rx="10" class="box"/>
+  <text x="180" y="339" class="heading">Azure Pipelines</text>
+  <text x="180" y="370" class="label">起動・検証・成果物・CD案</text>
+  <path d="M340 218H351V431H180V452" class="arrow"/>
+  <path d="M180 397V452" class="arrow"/>
+  <rect x="20" y="461" width="320" height="88" rx="10" class="box"/>
+  <text x="180" y="491" class="heading">二つの定義の対応を確認</text>
+  <text x="180" y="520" class="label">同じ版・設定・配備先・成果物</text>
+  <text x="180" y="575" class="label">接続・適用・パイプライン実行なし</text>
+</svg>

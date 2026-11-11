@@ -1,0 +1,48 @@
+{
+  "commands": "Direct Node equivalents of package.json scripts; no dependency changes.",
+  "checks": [
+    {
+      "label": "npm run check",
+      "command": [
+        "node",
+        "scripts/check.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Checked 47 pages, 10 SVGs, canonical AC rows, and 254 local document links.\nDRAFT PENDING: duration_minutes is intentionally unset: workshop duration has not been agreed\n",
+      "stderr": ""
+    },
+    {
+      "label": "npm run build",
+      "command": [
+        "node",
+        "scripts/build.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "Built 47 pages and 10 SVGs with official MOAW sha.9deeac0.\nDRAFT PENDING: duration_minutes is intentionally unset: workshop duration has not been agreed\n",
+      "stderr": ""
+    },
+    {
+      "label": "npm test",
+      "command": [
+        "node",
+        "--test",
+        "scripts/tests/content.test.mjs",
+        "scripts/tests/server.test.mjs"
+      ],
+      "exit_code": 0,
+      "stdout": "TAP version 13\n# Subtest: the complete manuscript covers all eight chapters with independent page IDs\nok 1 - the complete manuscript covers all eight chapters with independent page IDs\n  ---\n  duration_ms: 132.9429\n  type: 'test'\n  ...\n# Subtest: chapter-section numbers match the chapter map while chapter references and SVGs stay consistent\nok 2 - chapter-section numbers match the chapter map while chapter references and SVGs stay consistent\n  ---\n  duration_ms: 110.801\n  type: 'test'\n  ...\n# Subtest: the introduction explains learning goals and the scenario before the main chapters\nok 3 - the introduction explains learning goals and the scenario before the main chapters\n  ---\n  duration_ms: 80.2054\n  type: 'test'\n  ...\n# Subtest: learner pages provide goals, exercises and checks without authoring-status commentary\nok 4 - learner pages provide goals, exercises and checks without authoring-status commentary\n  ---\n  duration_ms: 97.4442\n  type: 'test'\n  ...\n# Subtest: duration is a reported draft exception, not a publication pass or an invalid value\nok 5 - duration is a reported draft exception, not a publication pass or an invalid value\n  ---\n  duration_ms: 2.4252\n  type: 'test'\n  ...\n# Subtest: invalid metadata is rejected for its actual field\nok 6 - invalid metadata is rejected for its actual field\n  ---\n  duration_ms: 5.3553\n  type: 'test'\n  ...\n# Subtest: fenced YAML front matter is preserved, but a raw fenced separator is rejected\nok 7 - fenced YAML front matter is preserved, but a raw fenced separator is rejected\n  ---\n  duration_ms: 1.7611\n  type: 'test'\n  ...\n# Subtest: page identity and closed, balanced hints are required\nok 8 - page identity and closed, balanced hints are required\n  ---\n  duration_ms: 0.9766\n  type: 'test'\n  ...\n# Subtest: missing and wrong-case assets fail, without substituting another figure\nok 9 - missing and wrong-case assets fail, without substituting another figure\n  ---\n  duration_ms: 2.4168\n  type: 'test'\n  ...\n# Subtest: unexpected active content and MOAW preprocessing inside copyable examples fail\nok 10 - unexpected active content and MOAW preprocessing inside copyable examples fail\n  ---\n  duration_ms: 1.0132\n  type: 'test'\n  ...\n# Subtest: shell adaptation removes only the expected tracking and detects upstream drift\nok 11 - shell adaptation removes only the expected tracking and detects upstream drift\n  ---\n  duration_ms: 4.395\n  type: 'test'\n  ...\n# Subtest: publication check actually runs and rejects the real unset duration\nok 12 - publication check actually runs and rejects the real unset duration\n  ---\n  duration_ms: 298.0179\n  type: 'test'\n  ...\n# Subtest: preview serves the actual workshop with tracking removed and restricted network policy\nok 13 - preview serves the actual workshop with tracking removed and restricted network policy\n  ---\n  duration_ms: 60.4018\n  type: 'test'\n  ...\n# Rejected malformed preview URL: URI malformed\n# Subtest: unlisted files, outside paths, writes and untrusted hosts are not served\nok 14 - unlisted files, outside paths, writes and untrusted hosts are not served\n  ---\n  duration_ms: 41.75\n  type: 'test'\n  ...\n# Subtest: all official JS and CSS remain byte-identical to the pinned distribution\nok 15 - all official JS and CSS remain byte-identical to the pinned distribution\n  ---\n  duration_ms: 18.5299\n  type: 'test'\n  ...\n1..15\n# tests 15\n# suites 0\n# pass 15\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1571.3778\n",
+      "stderr": ""
+    },
+    {
+      "label": "npm run test:browser",
+      "command": [
+        "node",
+        "node_modules/@playwright/test/cli.js",
+        "test"
+      ],
+      "exit_code": 0,
+      "stdout": "\nRunning 5 tests using 1 worker\n\n\n\n\n\n[1/5] scripts\\browser\\workshop.spec.mjs:43:1 › the introduction is discoverable and leads into the eight main chapters\n[2/5] scripts\\browser\\workshop.spec.mjs:97:1 › all pages, real code, SVG loading and every collapsed hint work in the official viewer\n[3/5] scripts\\browser\\workshop.spec.mjs:147:1 › table of contents, deep links, reload and keyboard hints work\n[4/5] scripts\\browser\\workshop.spec.mjs:167:1 › narrow pages do not overflow and diagrams retain readable text\n[5/5] scripts\\browser\\workshop.spec.mjs:184:1 › every SVG parses, its labels fit, and connectors do not cross text\n  5 passed (42.1s)\n",
+      "stderr": "(node:62068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:62068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "frozen_at": "2026-10-18T14:08:23.997315+00:00",
+  "question": "Initially identifying relevant files versus independent search for the same AC-08 defect",
+  "order": [
+    "A",
+    "B"
+  ],
+  "repetitions": 1,
+  "copy_names": {
+    "A": "c8-a",
+    "B": "c8-b"
+  },
+  "same_source_and_seed_database": true,
+  "common_source_and_data_fingerprint": "212e7980424fa0b694824b86e2df7a8e7168112542e2b95ed9825cef27ac2154",
+  "local_git_revisions": {
+    "A": "e53cc1a7ac2837930d2b4f797b7cd520461b92c5",
+    "B": "58d0b7fab81c7cf2eda87c9581fe82d7c30d09b1"
+  },
+  "model": "gpt-5.6-luna",
+  "reasoning": "medium",
+  "cli_version": "1.0.98",
+  "experimental": false,
+  "agent": "default implementation participant",
+  "tools": [
+    "view",
+    "rg",
+    "glob",
+    "apply_patch",
+    "create",
+    "edit",
+    "powershell"
+  ],
+  "fixed_assets": "tests, dependencies, instructions, agents, skills, CI and Terraform",
+  "common_request_sha256": "58a5626c08710465e1d405dfd38199408f8038465630a3a17d7160aa14b344ea",
+  "only_experimental_difference": "関連ファイル：request_portal\\__init__.py、tests\\test_workshop_filters.py",
+  "no_previous_trial_or_planning_output_given_to_ab": true,
+  "quality": [
+    "Existing application pytest suite, excluding completed-reference-patch inspection",
+    "Ruff lint",
+    "Ruff format check",
+    "mypy request_portal",
+    "Separate coordinator oracle: same fixed six-record UI/API contract with 132 requests"
+  ],
+  "calibration": {
+    "application": "3 count failures,95 passed,0 errors,0 skipped; static checks passed",
+    "oracle": "132 requests;32 count failures; selected IDs remained correct"
+  },
+  "metrics": [
+    "Native CLI elapsed seconds from process start to exit",
+    "Native CLI usage fields with unit/source/cache definitions",
+    "Observed read/search/edit/check tool calls and failures including recovery",
+    "Same-source quality evidence",
+    "Interventions inside trials, separate from preparation"
+  ],
+  "not_directly_observable": [
+    "Mental diagnosis time",
+    "monetary charge",
+    "unlogged reasoning"
+  ],
+  "intervention_policy": "No coaching during either trial. Stop on safety/scope violations or a broken common check; reset both only if shared conditions require correction.",
+  "limits": [
+    "A precedes B; cache/order effects are not eliminated",
+    "Local Git IDs differ; all starting source and seed DB bytes match",
+    "Shared instructions and assets may already provide navigation",
+    "One pair is not a generalized causal result",
+    "No actual human approval or third-party evaluation"
+  ],
+  "preparation_failure": "A preparer text read initially used the Windows default encoding; corrected to explicit UTF-8 before either trial. No model trial had started."
+}

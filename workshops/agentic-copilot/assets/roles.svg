@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="570" viewBox="0 0 360 570" role="img" aria-labelledby="roles-title roles-desc">
+  <title id="roles-title">同じ版の検証結果をレビューへ渡す</title>
+  <desc id="roles-desc">人が対象と範囲を決める。実行担当がSkillを使って確認を実行し、失敗の種類を分けて報告する。レビュー担当は同じ版の結果を評価する。修正は実装担当、追加確認は実行担当へ返し、採用するかと次の範囲は人が決める。</desc>
+  <defs><marker id="roles-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#roles-arrow)}</style>
+  <text x="180" y="28" class="heading">担当が変わっても、同じ版で</text>
+  <rect x="20" y="48" width="320" height="72" rx="10" class="box"/>
+  <text x="180" y="78" class="heading">人：対象と範囲を決める</text>
+  <text x="180" y="105" class="label">版・変更内容・品質・許可</text>
+  <path d="M180 121V155" class="arrow"/>
+  <rect x="20" y="164" width="320" height="86" rx="10" class="box"/>
+  <text x="180" y="194" class="heading">実行担当＋検証Skill</text>
+  <text x="180" y="224" class="label">確認を実行し、失敗を分けて報告</text>
+  <path d="M180 251V285" class="arrow"/>
+  <rect x="20" y="294" width="320" height="82" rx="10" class="box"/>
+  <text x="180" y="325" class="heading">レビュー担当</text>
+  <text x="180" y="354" class="label">同じ版の変更と結果から指摘</text>
+  <path d="M180 377V411" class="arrow"/>
+  <rect x="20" y="420" width="320" height="82" rx="10" class="box"/>
+  <text x="180" y="451" class="heading">人：採用と次の作業を判断</text>
+  <text x="180" y="480" class="label">修正は実装担当へ戻す</text>
+  <path d="M340 461H351V207H341" class="arrow"/>
+  <text x="180" y="533" class="label">追加確認は実行担当へ</text>
+  <text x="180" y="557" class="label">Skillで操作の制限を回避しない</text>
+</svg>

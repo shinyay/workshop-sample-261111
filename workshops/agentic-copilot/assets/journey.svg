@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="608" viewBox="0 0 360 608" role="img" aria-labelledby="journey-title journey-desc">
+  <title id="journey-title">全8章の学習と受け渡し</title>
+  <desc id="journey-desc">理解と計画、任せ方の準備、実装と品質判断、引き継ぎと改善の順に進む。比較用のコードとDBは本編へ戻さない。</desc>
+  <defs><marker id="journey-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#0078d4"/></marker></defs>
+  <style>text{font-family:system-ui,"Yu Gothic",sans-serif;fill:#222;text-anchor:middle}.heading{font-size:19px;font-weight:700}.label{font-size:16px}.box{fill:#e7f1f9;stroke:#0078d4;stroke-width:1.5}.arrow{fill:none;stroke:#0078d4;stroke-width:2;marker-end:url(#journey-arrow)}</style>
+  <text x="180" y="28" class="heading">一つの改修を、次の判断へつなぐ</text>
+  <rect x="20" y="48" width="320" height="94" rx="10" class="box"/>
+  <text x="180" y="78" class="heading">理解と計画｜第1章・第2章</text>
+  <text x="180" y="108" class="label">調べて理解する → 要件と計画</text>
+  <path d="M180 143V180" class="arrow"/>
+  <rect x="20" y="188" width="320" height="94" rx="10" class="box"/>
+  <text x="180" y="218" class="heading">任せ方の準備｜第3章・第4章</text>
+  <text x="180" y="248" class="label">指示・役割・手順 → 使って確認</text>
+  <path d="M180 283V320" class="arrow"/>
+  <rect x="20" y="328" width="320" height="94" rx="10" class="box"/>
+  <text x="180" y="358" class="heading">実装と品質｜第5章・第6章</text>
+  <text x="180" y="388" class="label">変更・確認 → 人が品質を判断</text>
+  <path d="M180 423V460" class="arrow"/>
+  <rect x="20" y="468" width="320" height="94" rx="10" class="box"/>
+  <text x="180" y="498" class="heading">引き継ぎ・改善｜第7章・第8章</text>
+  <text x="180" y="528" class="label">定義案・比較 → 次の開発手順</text>
+  <text x="180" y="593" class="label">比較用コード・DBは本編へ戻さない</text>
+</svg>

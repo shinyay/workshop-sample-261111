@@ -1,0 +1,7 @@
+{
+  "this_run": "Independent local repositories, no remotes; local Git IDs are evidence identities, not retrievable upstream refs.",
+  "cleanup": "The owned working copies, databases, profiles and tools will be removed after preservation. Old paths and local Git IDs cannot be assumed to remain usable.",
+  "next_start": "Preparation owner reconstructs a fresh, quality-checked completed application, creates a separate count-only defective fixture, calibrates the common checks, prepares independent byte-matching A/B source+data and supplies a new baseline manifest and references. Start only after those inputs and fixed entries exist and are demonstrated.",
+  "stop_on_missing_assets": "Stop and return to the preparation owner. Keep the missing artifact name, intended baseline, supplied references and any checks already run. Resume only after a newly identified common baseline and checks are verified for both conditions.",
+  "records": "Historical conditions and results remain evidence, not an executable delivery package. No new source repository, runtime distribution, or cloud deployment is implied."
+}
